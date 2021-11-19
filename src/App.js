@@ -8,11 +8,13 @@ import Search from "./components/Search";
 import Details from "./components/Details";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
+import Header from "./components/Header";
 
 
 const App = () => {
   return (
       <ChakraProvider>
+        <Header/>
         <BrowserRouter>
           <Routes>
             <Route path={"/"} element={<Home/>} />
