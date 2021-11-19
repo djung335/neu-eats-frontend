@@ -22,10 +22,10 @@ const Header = () => {
         <Spacer />
         <Box>
           <Link>Privacy Policy</Link>
-          <Button mr="4">
+          <Button m={3}>
             Log In
           </Button>
-          <Button colorScheme="teal">Register</Button>
+          <Button mr={3} colorScheme="teal">Register</Button>
         </Box>
       </Flex>
   );
