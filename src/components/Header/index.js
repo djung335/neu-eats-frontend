@@ -5,9 +5,9 @@ import {
   Flex,
   Heading,
   HStack,
-  Link,
   Spacer,
-  Text
+  Text, useDisclosure,
+    Link
 } from "@chakra-ui/react";
 import {MdFastfood} from "react-icons/all";
 
@@ -21,7 +21,7 @@ const Header = () => {
         </Box>
         <Spacer />
         <Box>
-          <Link>Privacy Policy</Link>
+          <Link to="/privacy">Privacy Policy</Link>
           <Button m={3}>
             Log In
           </Button>

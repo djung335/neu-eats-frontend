@@ -9,16 +9,18 @@ import Details from "./components/Details";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
 import Header from "./components/Header";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 
 const App = () => {
   return (
       <ChakraProvider>
+        <BrowserRouter>
         <Header/>
         <Divider/>
-        <BrowserRouter>
           <Routes>
             <Route path={"/"} element={<Home/>} />
+            <Route path={"/privacy"} element={<PrivacyPolicy/>} />
             <Route path="/search" element={<Search/>} />
             <Route path="/details" element={<Details/>} />
             <Route path="/profile" element={<Profile/>} />
