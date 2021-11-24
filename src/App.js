@@ -12,14 +12,12 @@ import Header from "./components/Header";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 
 
-class App extends Component {
-  render() {
-    const { component: Component, ...props } = this.props
+const App = () => {
     return (
       <ChakraProvider>
         <BrowserRouter>
           {
-          props.pathname=='/login' ? <Header/>:null
+          window.location.pathname !== "/login" ? <Header/>:null
           }
           <Routes>
             <Route path={"/"} element={<Home/>} />
@@ -33,7 +31,6 @@ class App extends Component {
       </ChakraProvider>
 
     );
-  }
 }
 
 export default App;
