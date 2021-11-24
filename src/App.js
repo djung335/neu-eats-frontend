@@ -1,6 +1,6 @@
 import './App.css';
 
-import React from "react";
+import React, { Component } from "react";
 import Home from "./components/Home";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {ChakraProvider, Divider} from "@chakra-ui/react"
@@ -12,10 +12,15 @@ import Header from "./components/Header";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 
 
-const App = () => {
-  return (
+class App extends Component {
+  render() {
+    const { component: Component, ...props } = this.props
+    return (
       <ChakraProvider>
         <BrowserRouter>
+          {
+          props.pathname=='/login' ? <Header/>:null
+          }
           <Routes>
             <Route path={"/"} element={<Home/>} />
             <Route path={"/privacy"} element={<PrivacyPolicy/>} />
@@ -27,7 +32,8 @@ const App = () => {
         </BrowserRouter>
       </ChakraProvider>
 
-  );
+    );
+  }
 }
 
 export default App;
