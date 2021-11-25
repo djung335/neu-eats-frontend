@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 import {MdFastfood} from "react-icons/all";
 
-
 const Header = () => {
   return(
       <Flex>
