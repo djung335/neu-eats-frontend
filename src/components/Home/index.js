@@ -6,11 +6,9 @@ import {
   InputGroup,
   InputLeftElement,
   Text,
-  VStack,
-  Divider
+  VStack
 } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons";
-import Header from "../Header";
 
 const Home = () => {
   return (
