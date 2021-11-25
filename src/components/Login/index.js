@@ -26,8 +26,6 @@ const Login = () => {
       </Box>
     </Flex>
   );
-
-
 };
 
 export default Login;
