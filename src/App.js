@@ -17,7 +17,7 @@ const App = () => {
       <ChakraProvider>
         <BrowserRouter>
           {
-          window.location.pathname !== "/login" ? <Header/>:null
+          window.location.pathname !== "/login" ? <Header/>:null && window.location.pathname !== "/login" ? <Divider/>:null
           }
           <Routes>
             <Route path={"/"} element={<Home/>} />
