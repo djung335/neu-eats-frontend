@@ -16,6 +16,8 @@ const App = () => {
   return (
       <ChakraProvider>
         <BrowserRouter>
+          <Header/>
+          <Divider/>
           <Routes>
             <Route path={"/"} element={<Home/>} />
             <Route path={"/privacy"} element={<PrivacyPolicy/>} />
@@ -26,7 +28,6 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </ChakraProvider>
-
   );
 }
 
