@@ -9,7 +9,6 @@ import {
 import {MdFastfood} from "react-icons/all";
 import { Outlet } from "react-router-dom";
 
-
 const Header = () => {
   return(
     <>

@@ -26,7 +26,7 @@ const Login = () => {
         <Flex width="full" h="full" align="center" justifyContent="center" mt="-2em">
           <Box p={2}>
             <Box textAlign="start" mb="-0.25rem" ms={2}>
-              <Heading fontSize="2em">Log In.</Heading>
+              <Heading fontSize="2em" color="#4d4c4c">Log In.</Heading>
             </Box>
             <Box my={4}>
               <form>
