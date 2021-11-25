@@ -1,23 +1,14 @@
 import React from "react";
 import {
-  Box,
   Center,
-  Input,
-  InputGroup,
-  InputLeftElement,
   Text,
   VStack,
-  Divider,
   HStack,
   Image,
   useColorModeValue,
-  Heading,
   Stack,
-  Button,
-  Flex,
-  Avatar, useBreakpointValue, FormControl, StackDivider
+StackDivider
 } from "@chakra-ui/react";
-import {SearchIcon} from "@chakra-ui/icons";
 import image1 from "../../images/boston-shawarma-1.jpeg";
 import image2 from "../../images/boston-shawarma-2.jpeg";
 import alexa from "../../images/alexa.jpeg";
