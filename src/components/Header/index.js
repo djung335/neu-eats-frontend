@@ -3,16 +3,15 @@ import {
   Box,
   Button,
   Flex,
-  Heading,
-  HStack,
   Spacer,
-  Text, useDisclosure,
     Link
 } from "@chakra-ui/react";
 import {MdFastfood} from "react-icons/all";
+import { Outlet } from "react-router-dom";
 
 const Header = () => {
   return(
+    <>
       <Flex>
         <Box p="2">
           <MdFastfood size={40}/>
@@ -27,6 +26,8 @@ const Header = () => {
           <Button mr={3} colorScheme="teal">Register</Button>
         </Box>
       </Flex>
+      <Outlet />
+  </>
   );
 
 };

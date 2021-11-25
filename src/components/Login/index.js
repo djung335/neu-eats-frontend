@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stack, HStack, VStack, Flex, Grid, Center, Text, Square, IconButton, Link, Heading, FormControl, FormLabel, Input, Button, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { Box, HStack, VStack, Flex, Text, IconButton, Link, Heading, FormControl, Input, Button, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { MdFastfood, FaUserAlt, FaLock } from "react-icons/all";
 
 const Login = () => {
