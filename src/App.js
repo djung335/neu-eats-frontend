@@ -7,7 +7,10 @@ import {ChakraProvider } from "@chakra-ui/react"
 import Search from "./components/Search";
 import Details from "./components/Details";
 import Profile from "./components/Profile";
-import Login from "./components/Login";
+import Login from "./components/Login/";
+import Register from "./components/Login/register";
+import ForgotPassword from "./components/Login/forgotpassword";
+import RestaurantSetUp from "./components/Login/restaurantsetup";
 import Header from "./components/Header";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 
@@ -19,9 +22,7 @@ const App = () => {
           {/* {
           window.location.pathname !== "/login" ? <Header/>:null && window.location.pathname !== "/login" ? <Divider/>:null
           } */}
-      
           <Routes>
-          
             <Route path="/" element={<Header/>} >
               <Route path="home" element={<Home/>} />
               <Route path="privacy" element={<PrivacyPolicy/>} />
@@ -30,7 +31,9 @@ const App = () => {
               <Route path="profile" element={<Profile/>} />
             </Route>
             <Route path="/login" element={<Login/>} />
-            
+            <Route path="/register" element={<Register />} />
+            <Route path="/forgot" element={<ForgotPassword />} />
+            <Route path="/setup" element={<RestaurantSetUp />} />
             
           </Routes>
          
