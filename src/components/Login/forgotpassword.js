@@ -2,15 +2,15 @@ import React from "react";
 import { Flex } from "@chakra-ui/react";
 import LeftSide from "./LeftSide/";
 import RightSide from "./RightSide/";
-import LoginForm from "./LoginForm/";
+import ForgotPasswordForm from "./ForgotPasswordForm";
 
-const Login = () => {
+const Register = () => {
   return(
     <Flex minH="100vh">
       <LeftSide/>
-      <RightSide component={<LoginForm />}/>
+      <RightSide component={<ForgotPasswordForm />}/>
     </Flex>
   );
 };
 
-export default Login;
+export default Register;
