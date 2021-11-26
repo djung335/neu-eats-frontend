@@ -5,14 +5,11 @@ import RightSide from "./RightSide/";
 import RestaurantRegisterForm from "./RestaurantRegisterForm";
 
 const RestaurantSetUp = () => {
-    return ( <
-        Flex minH = "100vh" >
-        <
-        LeftSide / >
-        <
-        RightSide component = { < RestaurantRegisterForm / > }
-        /> <
-        /Flex>
+    return ( 
+      <Flex minH="100vh">
+        <LeftSide/>
+        <RightSide component={<RestaurantRegisterForm />}/> 
+      </Flex>
     );
 };
 
