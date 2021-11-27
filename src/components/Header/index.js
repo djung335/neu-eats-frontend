@@ -4,17 +4,17 @@ import {
   Button,
   Flex,
   Spacer,
-    Link
+    Link, IconButton,
 } from "@chakra-ui/react";
 import {MdFastfood} from "react-icons/all";
 import { Outlet } from "react-router-dom";
-
+import { Link as ReachLink } from "react-router-dom";
 const Header = () => {
   return(
     <>
       <Flex>
-        <Box p="2">
-          <MdFastfood size={40}/>
+        <Box p="3">
+        <IconButton as={ReachLink} to="/" icon={<MdFastfood size={25}/>} w="50px" h="50px" p={3} bg="#7986e6" borderRadius="10px" color="white"/>
           {/*<Heading size="md">Chakra App</Heading>*/}
         </Box>
         <Spacer />
@@ -23,7 +23,7 @@ const Header = () => {
           <Button m={3}>
             Log In
           </Button>
-          <Button mr={3} colorScheme="teal">Register</Button>
+          <Button mr={3} bg="#7986e6" color="white">Register</Button>
         </Box>
       </Flex>
       <Outlet />
