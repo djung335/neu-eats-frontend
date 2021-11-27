@@ -40,7 +40,7 @@ const RestaurantInfo = () => {
               <Button
                   mr={3}
                   colorScheme={'teal'}
-                  color={'white'}>
+                  bg={'#aacaef'}>
                 <FaPenFancy/> &nbsp; Write a Review
               </Button>
             </Link>
