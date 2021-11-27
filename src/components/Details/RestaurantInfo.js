@@ -1,15 +1,50 @@
-import {HStack, Image} from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  VStack
+} from "@chakra-ui/react";
 import image1 from "../../images/boston-shawarma-1.jpeg";
-import image2 from "../../images/boston-shawarma-2.jpeg";
+import filledPaw from "../../images/custom_filled_star.png";
+import emptyPaw from "../../images/custom_empty_star.png";
 import React from "react";
+import {FaPenFancy} from "react-icons/all";
+import {Link} from "react-router-dom";
 
 const RestaurantInfo = () => {
   return(
       <>
-        <HStack spacing={"0px"}>
-          <Image src={image1} alt={"image of wrap being made"} w={"50%"}/>
-          <Image src={image2} alt={"image of the restaurant"} w={"50%"}/>
-        </HStack>
+        <Flex
+            w={'full'}
+            h={'50vh'}
+            backgroundImage={
+              image1
+            }
+            backgroundSize={'cover'}
+            backgroundPosition={'center center'}>
+          <HStack align={'flex-end'} maxW={'2xl'} spacing={6}>
+            <VStack align={'left'}>
+              <Heading color={"white"} as={'h2'} mb={2} size={'2xl'}>Boston Shawarma</Heading>
+              <HStack spacing={"3px"}>
+                <Image src={filledPaw} w={'40px'}/>
+                <Image src={filledPaw} w={'40px'}/>
+                <Image src={filledPaw} w={'40px'}/>
+                <Image src={filledPaw} w={'40px'}/>
+                <Image src={emptyPaw} w={'40px'}/>
+              </HStack>
+            </VStack>
+            <Link to={'/review'}> {/* fix button alignment by changing justification*/}
+              <Button
+                  mr={3}
+                  colorScheme={'teal'}
+                  color={'white'}>
+                <FaPenFancy/> &nbsp; Write a Review
+              </Button>
+            </Link>
+          </HStack>
+        </Flex>
       </>
   )
 }
