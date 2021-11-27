@@ -21,9 +21,9 @@ const Header = () => {
         <Box>
           <ReachLink to="/privacy">Privacy Policy</ReachLink>
           <Button m={3}>
-          <ReachLink to="/privacy">Log in</ReachLink>
+          <ReachLink to="/login">Log in</ReachLink>
           </Button>
-          <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/privacy">Register</ReachLink></Button>
+          <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/register">Register</ReachLink></Button>
         </Box>
       </Flex>
       <Outlet />
