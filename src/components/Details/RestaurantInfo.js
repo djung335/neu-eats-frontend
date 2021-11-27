@@ -3,7 +3,7 @@ import {
   Flex,
   Heading,
   HStack,
-  Image,
+  Image, Text,
   VStack
 } from "@chakra-ui/react";
 import image1 from "../../images/boston-shawarma-1.jpeg";
@@ -33,6 +33,7 @@ const RestaurantInfo = () => {
                 <Image src={filledPaw} w={'40px'}/>
                 <Image src={filledPaw} w={'40px'}/>
                 <Image src={emptyPaw} w={'40px'}/>
+                <Text color={"white"}>614 Reviews</Text>
               </HStack>
             </VStack>
             <Link to={'/review'}> {/* fix button alignment by changing justification*/}
