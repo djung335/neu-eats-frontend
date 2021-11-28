@@ -10,8 +10,7 @@ import image1 from "../../images/boston-shawarma-1.jpeg";
 import filledPaw from "../../images/custom_filled_star.png";
 import emptyPaw from "../../images/custom_empty_star.png";
 import React from "react";
-import {FaPenFancy} from "react-icons/all";
-import {Link} from "react-router-dom";
+import WriteReview from "./WriteReview";
 
 const RestaurantInfo = () => {
   return(
@@ -36,14 +35,7 @@ const RestaurantInfo = () => {
                 <Text color={"white"}>614 Reviews</Text>
               </HStack>
             </VStack>
-            <Link to={'/review'}> {/* fix button alignment by changing justification*/}
-              <Button
-                  mr={3}
-                  colorScheme={'teal'}
-                  bg={'#aacaef'}>
-                <FaPenFancy/> &nbsp; Write a Review
-              </Button>
-            </Link>
+            <WriteReview/>
           </HStack>
         </Flex>
       </>
