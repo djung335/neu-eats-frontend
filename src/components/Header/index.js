@@ -19,11 +19,11 @@ const Header = () => {
         </Box>
         <Spacer />
         <Box>
-          <Link to="/privacy">Privacy Policy</Link>
+          <ReachLink to="/privacy">Privacy Policy</ReachLink>
           <Button m={3}>
-            Log In
+          <ReachLink to="/login">Log in</ReachLink>
           </Button>
-          <Button mr={3} bg="#7986e6" color="white">Register</Button>
+          <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/register">Register</ReachLink></Button>
         </Box>
       </Flex>
       <Outlet />
