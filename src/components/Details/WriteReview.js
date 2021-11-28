@@ -1,5 +1,5 @@
 import {
-  Button, HStack, Image,
+  Button, HStack,
   Modal, ModalBody,
   ModalCloseButton,
   ModalContent, ModalFooter,
@@ -8,7 +8,6 @@ import {
 } from "@chakra-ui/react";
 import {FaPenFancy} from "react-icons/all";
 import React from "react";
-import emptyPaw from "../../images/custom_empty_star.png";
 import Rating from "./Rating";
 
 const WriteReview = () => {
