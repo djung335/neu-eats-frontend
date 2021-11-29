@@ -3,6 +3,8 @@ import "./index.css"
 import {Box, Heading, HStack, Image, Text, VStack} from "@chakra-ui/react";
 import {FaPaw, FaCheck, FaTimes} from "react-icons/all";
 import rest from "./rest.json";
+import shawarma from "../../images/boston-shawarma-1.jpeg";
+import dave from "../../images/dave.jpeg";
 
 const SearchItem = ({
   rest = {
@@ -18,7 +20,11 @@ const SearchItem = ({
   return (
       <Box p={3} borderWidth={2} shadow="xl" rounded="lg">
         <HStack w="full">
-          <Box w="30%"><Image src="" alt="Restaurant Photo"/></Box>
+
+          <Box w="30%">
+            {/*Need to change so that it takes image from api
+            current one is just placeholder*/}
+            <Image src={shawarma} alt="Restaurant Photo"/></Box>
           <Box>
           </Box>
           <VStack align="left">
