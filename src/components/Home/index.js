@@ -8,9 +8,12 @@ import {
   VStack,
   HStack,
   Box,
-  Text
+  Text,
+   Wrap,
+   WrapItem
 } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons";
+import PopularReviews from "./PopularReviews";
 
 const Home = () => {
   return (
@@ -28,13 +31,10 @@ const Home = () => {
 
       </Center>
       <HStack mt="12">
-       <Box w="50%">
+       <Box w="50%" p={3}>
        <Text fontWeight="700" textAlign="left">Trending</Text>
      </Box>
-
-     <Box w="50%">
-       <Text fontWeight="700" textAlign="left">Popular Reviews</Text>
-     </Box>
+<PopularReviews/>
      </HStack>
      </>
   );
