@@ -1,0 +1,16 @@
+.partially-approved {
+    border-radius: 50%;
+    background: #FFF;
+    border: 1px solid #000;
+    position: relative;
+    overflow: hidden;
+}
+.partially-approved:before {
+    background-color: #5cb85c;
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 50%;
+    height: 100%;
+}
