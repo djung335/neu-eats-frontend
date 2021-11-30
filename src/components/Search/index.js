@@ -8,9 +8,7 @@ const Search = () => {
       <Flex>
       <Box p="2" w="60%">
           <Text fontWeight="bold" fontSize="2em">Results for "Good Food"...</Text>
-
         {
-
           rest.map((rest, index) => {
             return(
                 <VStack spacing="12px">
@@ -19,11 +17,7 @@ const Search = () => {
                 </VStack>
             );
           })
-
-
         }
-
-
       </Box>
         <Box w="40%">
           <h1>Map goes here!</h1>
