@@ -9,7 +9,7 @@
     "time": "3 hours ago",
     "profileImage": "../../images/alexa.jpeg",
     "stats": {
-      "rating": 45,
+      "rating": 4.5,
       "helpfuls": 3
     }
   },
@@ -23,7 +23,7 @@
     "time": "last month",
     "profileImage": "../../images/dave.jpeg",
     "stats": {
-      "rating": 50,
+      "rating": 5.0,
       "helpfuls": 0
     }
   }

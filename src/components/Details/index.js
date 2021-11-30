@@ -4,13 +4,13 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Reviews from "./Reviews";
-import RestaurantInfo from "./RestaurantInfo";
+import RestaurantPage from "./RestaurantPage";
 
 const Details = () => {
   return(
       <Center>
         <VStack>
-          <RestaurantInfo/>
+          <RestaurantPage/>
           <Reviews/>
         </VStack>
       </Center>
