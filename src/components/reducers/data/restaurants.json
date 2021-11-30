@@ -1,13 +1,5 @@
-import React from "react";
-import {
-  Center,
-  VStack,
-} from "@chakra-ui/react";
-import Reviews from "./Reviews";
-import RestaurantPage from "./RestaurantPage";
-
-const Details = ({
-  restaurant = {
+[
+  {
     "restaurant_id": 10,
     "name": "Boston Shawarma",
     "address": "315 Huntington Ave",
@@ -16,7 +8,7 @@ const Details = ({
     "zip": "02115",
     "rating": 4.0,
     "reviewCount": 2,
-    "restaurantImage": "../../images/boston-shawarma-2.jpeg",
+    "restaurantImage": "../../images/boston-shawarma-1.jpeg",
     "attributes": {
       "HuskyDollars": true,
       "StudentDiscount": true
@@ -43,17 +35,4 @@ const Details = ({
       "SundayEnd": "23:00:00"
     }
   }
-}) => {
-  return(
-      <Center>
-        <VStack>
-          <RestaurantPage/>
-          <Reviews restaurant={restaurant.name}/>
-        </VStack>
-      </Center>
-  );
-
-
-};
-
-export default Details;
+]

@@ -5,7 +5,7 @@ import React from "react";
 import reviews from "../reducers/data/reviews.json"
 import ReviewItem from "./ReviewItem";
 
-const Reviews = () => {
+const Reviews = (restaurant) => {
   return(
       <>
         <Heading size={'lg'}>Reviews</Heading>

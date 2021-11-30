@@ -32,15 +32,15 @@ const ReviewItem = ({review}) => {
                 {review.handle}
               </Text>
               <HStack spacing={'3px'}>
-                <Image src={filledPaw} w={'30px'}/>
-                <Image src={filledPaw} w={'30px'}/>
-                <Image src={filledPaw} w={'30px'}/>
-                <Image src={filledPaw} w={'30px'}/>
-                <Image src={filledPaw} w={'30px'}/>
+                <Image src={filledPaw} w={{base: "30px", sm: "10px", md: "20px"}}/>
+                <Image src={filledPaw} w={{base: "30px", sm: "10px", md: "20px"}}/>
+                <Image src={filledPaw} w={{base: "30px", sm: "10px", md: "20px"}}/>
+                <Image src={filledPaw} w={{base: "30px", sm: "10px", md: "20px"}}/>
+                <Image src={filledPaw} w={{base: "30px", sm: "10px", md: "20px"}}/>
               </HStack>
             </VStack>
             <Text
-                fontSize={{ base: 'sm', sm: 'md' }}
+                fontSize={{ base: 'sm', sm: 'sm' }}
                 color={useColorModeValue('gray.800', 'gray.400')}
             >
               {review.review}
