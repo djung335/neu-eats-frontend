@@ -7,7 +7,6 @@ import {
   Text,
   VStack
 } from "@chakra-ui/react";
-import WriteReview from "./WriteReview";
 import {CheckIcon} from "@chakra-ui/icons";
 import {IoPaw} from "react-icons/all";
 import StarRatingComponent from 'react-star-rating-component';
@@ -89,7 +88,6 @@ const RestaurantPage = ({
             </VStack>
           </HStack>
           <Spacer/>
-          <WriteReview/>
         </Flex>
       </>
   )

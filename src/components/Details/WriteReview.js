@@ -45,24 +45,14 @@ const WriteReview = ({
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   let [value, setValue] = React.useState("")
-  let [currReview, setCurrReview] = useState('');
 
   let handleInputChange = (e) => {
     let inputValue = e.target.value
     setValue(inputValue)
   }
-  const dispatch = useDispatch();
-  const reviewClickHandler = () => {
-    postNewReview(dispatch, {
-      review: currReview
-    });
-  }
   return(
       <>
         <Button
-            mr={3}
-            colorScheme={'white'}
-            bg={'#aacaef'}
             onClick={onOpen}
         >
           <FaPenFancy/> &nbsp; Write a Review
@@ -77,7 +67,7 @@ const WriteReview = ({
                 <Rating/>
               </HStack>
               <Textarea
-                  value={currReview}
+                  value={value}
                   onChange={handleInputChange}
                   placeholder="Write your review here..."
                   size="sm"
@@ -88,7 +78,7 @@ const WriteReview = ({
               <Button
                   colorScheme={'white'}
                   bg={'#aacaef'}
-                  onClick={reviewClickHandler}
+                  onClick={onClose}
               >
                 Post
               </Button>

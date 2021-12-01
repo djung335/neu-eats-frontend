@@ -9,13 +9,8 @@ import {
 import StarRatingComponent from "react-star-rating-component";
 import {IoPaw} from "react-icons/all";
 import {useDispatch} from "react-redux";
-import {deleteReview} from "../../services/reviewService";
 
 const ReviewItem = ({review}) => {
-  const dispatch = useDispatch();
-  const deleteReviewClickHandler = () => {
-    deleteReview(dispatch, review);
-  };
   return(
       <>
         <Box
