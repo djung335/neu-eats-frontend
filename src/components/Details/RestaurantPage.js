@@ -1,9 +1,17 @@
 import React from "react";
-import {Flex, Heading, HStack, Image, Text, VStack} from "@chakra-ui/react";
-import filledPaw from "../../images/custom_filled_star.png";
-import emptyPaw from "../../images/custom_empty_star.png";
+import {
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Spacer,
+  Text,
+  VStack
+} from "@chakra-ui/react";
 import WriteReview from "./WriteReview";
 import {CheckIcon} from "@chakra-ui/icons";
+import {IoPaw} from "react-icons/all";
+import StarRatingComponent from 'react-star-rating-component';
 
 const RestaurantPage = ({
     restaurant = {
@@ -60,11 +68,14 @@ const RestaurantPage = ({
             <VStack align={'left'}>
               <Heading color={"white"} as={'h2'} mb={0} size={'2xl'}>Boston Shawarma</Heading>
               <HStack spacing={"3px"}>
-                <Image src={filledPaw} w={'2.5em'}/>
-                <Image src={filledPaw} w={'2.5em'}/>
-                <Image src={filledPaw} w={'2.5em'}/>
-                <Image src={filledPaw} w={'2.5em'}/>
-                <Image src={emptyPaw} w={'2.5em'}/>
+                <StarRatingComponent
+                    name={restaurant.name + " rating"}
+                    editing={false}
+                    starColor={"#7986e6"}
+                    emptyStarColor={"#b0b0b0"}
+                    renderStarIcon={() => <IoPaw size={'1.5em'}/>}
+                    value={restaurant.rating}
+                />
                 <Text color={"white"}>{restaurant.reviewCount} Reviews</Text>
               </HStack>
               <Text color={new Date() >=
@@ -77,8 +88,9 @@ const RestaurantPage = ({
                 <Text color={"white"}>student discount</Text>
               </HStack>
             </VStack>
-            <WriteReview/>
           </HStack>
+          <Spacer/>
+          <WriteReview/>
         </Flex>
       </>
   )
