@@ -7,8 +7,10 @@ import {
   ModalOverlay, Text, Textarea, useDisclosure
 } from "@chakra-ui/react";
 import {FaPenFancy} from "react-icons/all";
-import React from "react";
+import React, {useState} from "react";
 import Rating from "./Rating";
+import {useDispatch} from "react-redux";
+import {postNewReview} from "../../services/reviewService";
 
 const WriteReview = ({
   restaurant = {
@@ -43,10 +45,17 @@ const WriteReview = ({
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   let [value, setValue] = React.useState("")
+  let [currReview, setCurrReview] = useState('');
 
   let handleInputChange = (e) => {
     let inputValue = e.target.value
     setValue(inputValue)
+  }
+  const dispatch = useDispatch();
+  const reviewClickHandler = () => {
+    postNewReview(dispatch, {
+      review: currReview
+    });
   }
   return(
       <>
@@ -54,10 +63,10 @@ const WriteReview = ({
             mr={3}
             colorScheme={'white'}
             bg={'#aacaef'}
-            onClick={onOpen}>
+            onClick={onOpen}
+        >
           <FaPenFancy/> &nbsp; Write a Review
         </Button>
-
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
@@ -69,7 +78,7 @@ const WriteReview = ({
               </HStack>
               <Textarea
                   value={value}
-                  onChange={handleInputChange}
+                  onChange={(event) => setCurrReview(event.target.value)}
                   placeholder="Write your review here..."
                   size="sm"
               />
@@ -79,7 +88,7 @@ const WriteReview = ({
               <Button
                   colorScheme={'white'}
                   bg={'#aacaef'}
-                  onClick={onClose}
+                  onClick={reviewClickHandler}
               >
                 Post
               </Button>

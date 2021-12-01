@@ -1,52 +1,58 @@
 import React from "react";
 import {
-  HStack, Image, Stack,
-  StackDivider, Text,
+  Avatar,
+  Box,
+  Stack,
+  Text,
   useColorModeValue,
-  VStack
 } from "@chakra-ui/react";
-import emptyPaw from "../../images/custom_empty_star.png";
-import halfPaw from "../../images/custom_half_filled_star.png";
-import filledPaw from "../../images/custom_filled_star.png";
+import StarRatingComponent from "react-star-rating-component";
+import {IoPaw} from "react-icons/all";
+import {useDispatch} from "react-redux";
+import {deleteReview} from "../../services/reviewService";
 
 const ReviewItem = ({review}) => {
+  const dispatch = useDispatch();
+  const deleteReviewClickHandler = () => {
+    deleteReview(dispatch, review);
+  };
   return(
       <>
-        <Stack
-            spacing={3}
-            bg={useColorModeValue('white', 'gray.800')}
-            maxW="95%"
+        <Box
+            maxW={'445px'}
             borderWidth="1px"
-            rounded="lg"
-            shadow="lg"
-            position="relative"
+            maxW="95%"
+            bg={useColorModeValue('white', 'gray.900')}
+            boxShadow={'2xl'}
+            rounded={'md'}
             p={6}
-            my={12}>
-          <HStack
-              spacing={10}
-              divider={<StackDivider borderColor="gray.200" />}
-          >
-            <VStack>
-              <Image src={review.profileImage} w={'400px'} h={'100px'} objectFit={"contain"}/>
-              <Text lineHeight={1.1} fontSize={{ base: 'sm', md: 'md' }}>
-                {review.handle}
-              </Text>
-              <HStack spacing={'3px'}>
-                <Image src={filledPaw} w={{base: "30px", sm: "10px", md: "20px"}}/>
-                <Image src={filledPaw} w={{base: "30px", sm: "10px", md: "20px"}}/>
-                <Image src={filledPaw} w={{base: "30px", sm: "10px", md: "20px"}}/>
-                <Image src={filledPaw} w={{base: "30px", sm: "10px", md: "20px"}}/>
-                <Image src={filledPaw} w={{base: "30px", sm: "10px", md: "20px"}}/>
-              </HStack>
-            </VStack>
-            <Text
-                fontSize={{ base: 'sm', sm: 'sm' }}
-                color={useColorModeValue('gray.800', 'gray.400')}
-            >
+            overflow={'hidden'}>
+          <Stack mb={2} direction={'row'} spacing={4} align={'center'}>
+            <Avatar
+                src={review.profileImage}
+                alt={'Author'}
+            />
+            <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+              <Text fontWeight={600}>{review.handle}</Text>
+              <span pos={"relative"} left={"100px"}>
+                <StarRatingComponent
+                  name={review.handle + "\'s review"}
+                  editing={false}
+                  starColor={"#7986e6"}
+                  emptyStarColor={"#b0b0b0"}
+                  renderStarIcon={() => <IoPaw fontSize={['sm', 'md', 'lg', 'xl']}/>}
+                  value={review.stats.rating}
+              />
+              </span>
+              <Text color={'gray.500'}>{review.time}</Text>
+            </Stack>
+          </Stack>
+          <Stack>
+            <Text color={'gray.500'}>
               {review.review}
             </Text>
-          </HStack>
-        </Stack>
+          </Stack>
+        </Box>
       </>
   )
 }
