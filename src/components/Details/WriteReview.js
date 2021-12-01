@@ -4,7 +4,7 @@ import {
   ModalCloseButton,
   ModalContent, ModalFooter,
   ModalHeader,
-  ModalOverlay, Text, Textarea, useDisclosure
+  ModalOverlay, Textarea, useDisclosure
 } from "@chakra-ui/react";
 import {FaPenFancy} from "react-icons/all";
 import React, {useState} from "react";
@@ -77,8 +77,8 @@ const WriteReview = ({
                 <Rating/>
               </HStack>
               <Textarea
-                  value={value}
-                  onChange={(event) => setCurrReview(event.target.value)}
+                  value={currReview}
+                  onChange={handleInputChange}
                   placeholder="Write your review here..."
                   size="sm"
               />

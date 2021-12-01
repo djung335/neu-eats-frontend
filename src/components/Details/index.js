@@ -5,6 +5,13 @@ import {
 } from "@chakra-ui/react";
 import Reviews from "./Reviews";
 import RestaurantPage from "./RestaurantPage";
+import {combineReducers, createStore} from "redux";
+import reviews from "../../reducers/reviews";
+import restaurants from "../../reducers/restaurants";
+import {Provider} from "react-redux";
+
+const reducer = combineReducers({reviews: reviews, restaurants})
+const store = createStore(reducer);
 
 const Details = ({
   restaurant = {
@@ -45,12 +52,14 @@ const Details = ({
   }
 }) => {
   return(
-      <Center>
-        <VStack>
-          <RestaurantPage/>
-          <Reviews restaurant={restaurant.name}/>
-        </VStack>
-      </Center>
+      <Provider store={store}>
+        <Center>
+          <VStack>
+            <RestaurantPage/>
+            <Reviews restaurant={restaurant.name}/>
+          </VStack>
+        </Center>
+      </Provider>
   );
 
 
