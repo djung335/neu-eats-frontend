@@ -8,7 +8,6 @@ import {
 } from "@chakra-ui/react";
 import StarRatingComponent from "react-star-rating-component";
 import {IoPaw} from "react-icons/all";
-import {useDispatch} from "react-redux";
 
 const ReviewItem = ({review}) => {
   return(

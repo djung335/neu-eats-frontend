@@ -9,8 +9,6 @@ import {
 import {FaPenFancy} from "react-icons/all";
 import React, {useState} from "react";
 import Rating from "./Rating";
-import {useDispatch} from "react-redux";
-import {postNewReview} from "../../services/reviewService";
 
 const WriteReview = ({
   restaurant = {
