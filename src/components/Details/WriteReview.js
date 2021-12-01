@@ -4,7 +4,7 @@ import {
   ModalCloseButton,
   ModalContent, ModalFooter,
   ModalHeader,
-  ModalOverlay, Text, Textarea, useDisclosure
+  ModalOverlay, Textarea, useDisclosure
 } from "@chakra-ui/react";
 import {FaPenFancy} from "react-icons/all";
 import React, {useState} from "react";
@@ -47,10 +47,13 @@ const WriteReview = ({
   let [value, setValue] = React.useState("")
   let [currReview, setCurrReview] = useState('');
 
+  /*
   let handleInputChange = (e) => {
     let inputValue = e.target.value
     setValue(inputValue)
   }
+  */
+  
   const dispatch = useDispatch();
   const reviewClickHandler = () => {
     postNewReview(dispatch, {

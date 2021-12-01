@@ -13,13 +13,15 @@ import {deleteReview} from "../../services/reviewService";
 
 const ReviewItem = ({review}) => {
   const dispatch = useDispatch();
+  /*
   const deleteReviewClickHandler = () => {
     deleteReview(dispatch, review);
   };
+  */
   return(
       <>
         <Box
-            maxW={'445px'}
+            // maxW={'445px'}
             borderWidth="1px"
             maxW="95%"
             bg={useColorModeValue('white', 'gray.900')}
@@ -36,7 +38,7 @@ const ReviewItem = ({review}) => {
               <Text fontWeight={600}>{review.handle}</Text>
               <span pos={"relative"} left={"100px"}>
                 <StarRatingComponent
-                  name={review.handle + "\'s review"}
+                  name={review.handle + "'s review"}
                   editing={false}
                   starColor={"#7986e6"}
                   emptyStarColor={"#b0b0b0"}
