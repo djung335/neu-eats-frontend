@@ -3,7 +3,6 @@ import {
   Flex,
   Heading,
   HStack,
-  Image,
   Spacer,
   Text,
   VStack

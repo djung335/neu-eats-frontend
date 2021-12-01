@@ -1,16 +1,15 @@
 import {
   Heading,
   HStack, Image,
-  Stack, Flex,
+  Stack,
   StackDivider, Text,
-  useColorModeValue, VStack, Button
+  useColorModeValue, VStack
 } from "@chakra-ui/react";
 import alexa from "../../images/alexa.jpeg";
 import dave from "../../images/dave.jpeg";
 import React from "react";
 import filledPaw from "../../images/custom_filled_star.png";
 import emptyPaw from "../../images/custom_empty_star.png";
-import {FaPenFancy} from "react-icons/all";
 
 const ProfileReviews = ({
   user = {
@@ -26,17 +25,12 @@ const ProfileReviews = ({
 }) => {
   return(
       <>
-
-
         {user.owner && <Heading size={'lg'}>Your Restaurant Reviews</Heading>}
         {user.user && <Heading size={'lg'}>Your Reviews</Heading>}
         {!user.user && !user.owner && <Heading size={'lg'}>{user.restName}'s Reviews</Heading>}
-
         <Stack
-
             spacing={3}
             bg={useColorModeValue('white', 'gray.800')}
-
             borderWidth="1px"
             rounded="lg"
             shadow="lg"
@@ -101,7 +95,6 @@ const ProfileReviews = ({
                 color={useColorModeValue('gray.800', 'gray.400')}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/><br/> Ut enim ad minim veniam, quis nostrud exercitation ullamco
-
               laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Text>
           </HStack>

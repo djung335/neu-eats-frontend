@@ -1,10 +1,10 @@
 import {
-  Button, HStack,
+  Button,
   Modal, ModalBody,
   ModalCloseButton,
   ModalContent, ModalFooter,
   ModalHeader,
-  ModalOverlay, Text, Textarea, useDisclosure
+  ModalOverlay, Textarea, useDisclosure
 } from "@chakra-ui/react";
 import {FaPenFancy} from "react-icons/all";
 import React from "react";
@@ -30,7 +30,6 @@ const WriteReview = () => {
             onClick={onOpen}>
           <FaPenFancy/> &nbsp; Edit Profile
         </Button>
-
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
@@ -44,7 +43,6 @@ const WriteReview = () => {
                   size="sm"
               />
             </ModalBody>
-
             <ModalHeader>Email</ModalHeader>
             <ModalBody>
               <Textarea
@@ -54,7 +52,6 @@ const WriteReview = () => {
                   size="sm"
               />
             </ModalBody>
-
             <ModalHeader>Phone Number</ModalHeader>
             <ModalBody>
               <Textarea
@@ -64,8 +61,6 @@ const WriteReview = () => {
                   size="sm"
               />
             </ModalBody>
-
-
             <ModalFooter>
               <Button
                   colorScheme={'white'}

@@ -2,9 +2,7 @@ import React from "react";
 import "./index.css"
 import {Box, Heading, HStack, Image, Text, VStack} from "@chakra-ui/react";
 import {FaPaw, FaCheck, FaTimes} from "react-icons/all";
-import rest from "./rest.json";
 import shawarma from "../../images/boston-shawarma-1.jpeg";
-import dave from "../../images/dave.jpeg";
 
 const SearchItem = ({
   rest = {
@@ -33,7 +31,6 @@ const SearchItem = ({
               {/*{[...Array(rest.restReviews)].map((star) => {*/}
               {/*  return <FaPaw color="7986e6"/>*/}
               {/*})}*/}
-
               {rest.restRating >=1 && <FaPaw color="7986e6"/>}
               {rest.restRating < 1 && <FaPaw color="gray"/>}
               {rest.restRating >=2 && <FaPaw color="7986e6"/>}
@@ -44,7 +41,6 @@ const SearchItem = ({
               {rest.restRating < 4 && <FaPaw color="gray"/>}
               {rest.restRating >=5 && <FaPaw color="7986e6"/>}
               {rest.restRating < 5 && <FaPaw color="gray"/>}
-
               <Text fontSize="12" fontWeight="bold">{rest.restReviews} Reviews</Text>
               <Text fontSize="12">({rest.studentRev} student reviews & {rest.otherRev} other reviews)</Text>
             </HStack>
@@ -54,12 +50,10 @@ const SearchItem = ({
               {rest.husky && <FaCheck fontSize="12" color="green"/>}
               {!rest.husky && <FaTimes fontSize="12" color="red"/>}
               <Text fontSize="12">Husky Dollars</Text>
-
               {rest.discount && <FaCheck fontSize="12" color="green"/>}
               {!rest.discount && <FaTimes fontSize="12" color="red"/>}
               <Text fontSize="12">Student Discount</Text>
             </HStack>
-
             <HStack>
             {rest.tags.map((tags) => {
               return <Box fontSize="12" borderRadius="md" background="#7986e6" color="white" p="0.5">{tags}</Box>
