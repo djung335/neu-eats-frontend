@@ -30,16 +30,12 @@ const App = () => {
               <Route path="search" element={<Search/>} />
               <Route path="details" element={<Details/>} />
               <Route path="profile" element={<Profile/>} />
-             
             </Route>
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgot" element={<ForgotPassword />} />
             <Route path="/setup" element={<RestaurantSetUp />} />
-    
-            
           </Routes>
-         
         </BrowserRouter>
       </ChakraProvider>
 

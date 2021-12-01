@@ -1,6 +1,6 @@
-import whoJson from './data/restaurants.json';
+import restaurantJson from './data/restaurants.json';
 
-const restaurants = (state = whoJson) => {
+const restaurants = (state = restaurantJson) => {
   return(state);
 };
 

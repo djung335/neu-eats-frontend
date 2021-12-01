@@ -1,5 +1,5 @@
 import React from "react";
-import { Box,Flex,Text, Image, Heading, HStack, VStack} from "@chakra-ui/react";
+import { Box,Flex,Text, VStack} from "@chakra-ui/react";
 import rest from "./rest.json"
 import SearchItems from "./SearchItems";
 
