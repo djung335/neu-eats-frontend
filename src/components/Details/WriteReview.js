@@ -9,8 +9,6 @@ import {
 import {FaPenFancy} from "react-icons/all";
 import React, {useState} from "react";
 import Rating from "./Rating";
-import {useDispatch} from "react-redux";
-import {postNewReview} from "../../services/reviewService";
 
 const WriteReview = ({
   restaurant = {
@@ -45,27 +43,14 @@ const WriteReview = ({
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   let [value, setValue] = React.useState("")
-  let [currReview, setCurrReview] = useState('');
 
-  /*
   let handleInputChange = (e) => {
     let inputValue = e.target.value
     setValue(inputValue)
   }
-  */
-  
-  const dispatch = useDispatch();
-  const reviewClickHandler = () => {
-    postNewReview(dispatch, {
-      review: currReview
-    });
-  }
   return(
       <>
         <Button
-            mr={3}
-            colorScheme={'white'}
-            bg={'#aacaef'}
             onClick={onOpen}
         >
           <FaPenFancy/> &nbsp; Write a Review
@@ -81,7 +66,7 @@ const WriteReview = ({
               </HStack>
               <Textarea
                   value={value}
-                  onChange={(event) => setCurrReview(event.target.value)}
+                  onChange={handleInputChange}
                   placeholder="Write your review here..."
                   size="sm"
               />
@@ -91,7 +76,7 @@ const WriteReview = ({
               <Button
                   colorScheme={'white'}
                   bg={'#aacaef'}
-                  onClick={reviewClickHandler}
+                  onClick={onClose}
               >
                 Post
               </Button>
