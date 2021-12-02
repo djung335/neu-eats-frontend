@@ -2,8 +2,10 @@ import React from "react";
 import { Box, InputGroup, Input, InputLeftElement, Link, Button, FormControl, Heading } from "@chakra-ui/react";
 import { FaLock, FaUserAlt } from "react-icons/all";
 import { Link as ReachLink } from "react-router-dom"
+import { useAuth0 } from '@auth0/auth0-react';
 
 const LoginForm = () => {
+const { loginWithRedirect } = useAuth0();
   return(
     <>
     <Box textAlign="start" mb="-0.25rem" ms={2}>
@@ -25,7 +27,7 @@ const LoginForm = () => {
             </FormControl>
             <Link as={ReachLink} to="/register" color="#afcdf0" fontSize="0.7em" fontWeight="bold" ml={4}> register </Link> <Link as={ReachLink} to="/forgot" color="#afcdf0" fontSize="0.7em" fontWeight="bold" ml={1}> forgot password? </Link>
                 <Box display="flex" justifyContent="end">
-                    <Button type="submit" w="5.5em" fontSize="1.2em" p="1.1em" fontWeight="normal" bg="#7986e6" color="white" borderRadius="0.6em">
+                    <Button onClick={() => loginWithRedirect()} type="submit" w="5.5em" fontSize="1.2em" p="1.1em" fontWeight="normal" bg="#7986e6" color="white" borderRadius="0.6em">
                         Log In
                     </Button>
                 </Box>
