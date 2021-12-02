@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Box, InputGroup, Input, InputLeftElement, Link, Button, FormControl, Heading } from "@chakra-ui/react";
 import { FaLock, FaUserAlt } from "react-icons/all";
 import { Link as ReachLink } from "react-router-dom"
-import { useAuth0 } from "@auth0/auth0-react";
 import params from "../../../auth0/auth0-params";
+import auth0 from 'auth0-js';
 
 const LoginForm = () => {
-  var auth0Client = new useAuth0.WebAuth({
+  var auth0Client = new auth0.WebAuth({
     domain: params.domain,
     clientID: params.clientId,
     audience: params.apiAudience,
@@ -15,12 +15,12 @@ const LoginForm = () => {
     responseType: 'token id_token'
   });
     
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    login(username, password)
+    login(email, password)
   };
 
   const login = (username,password) => {
@@ -50,7 +50,7 @@ const LoginForm = () => {
             <FormControl>
                 <InputGroup>
                 <InputLeftElement pointerEvents="none" children={<FaUserAlt color="#a2a2a2"/>} mt="0.85em" ml={1}/>
-                    <Input type="username" placeholder="username" value={ username } onChange={(e) => { setUsername(e.target.value); }} _placeholder={{color: "#a2a2a2"}} pr="10em" pt="2em" pb="2em" borderRadius="0.75em"/>
+                    <Input type="username" placeholder="username" value={ email } onChange={(e) => { setEmail(e.target.value); }} _placeholder={{color: "#a2a2a2"}} pr="10em" pt="2em" pb="2em" borderRadius="0.75em"/>
                 </InputGroup>
             </FormControl>
             <FormControl mt={5}>
