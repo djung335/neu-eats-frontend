@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Center, Flex, HStack, VStack} from "@chakra-ui/react";
+import {Box, Flex} from "@chakra-ui/react";
 import ProfileCard from "./ProfileCard";
 import ProfileReviews from "./ProfileReviews";
 
