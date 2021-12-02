@@ -1,9 +1,5 @@
 import {
-  Heading,
-  HStack, Image,
-  Stack, Flex,
-  StackDivider, Text,
-  useColorModeValue, VStack, Button, Box
+  Heading
 } from "@chakra-ui/react";
 
 import React from "react";

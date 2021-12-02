@@ -1,10 +1,10 @@
 import {
-  Button, HStack,
+  Button,
   Modal, ModalBody,
   ModalCloseButton,
   ModalContent, ModalFooter,
   ModalHeader,
-  ModalOverlay, Text, Textarea, useDisclosure
+  ModalOverlay, Textarea, useDisclosure
 } from "@chakra-ui/react";
 import {FaPenFancy} from "react-icons/all";
 import React from "react";

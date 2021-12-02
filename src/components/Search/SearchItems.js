@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css"
 import {Box, Heading, HStack, Image, Text, VStack} from "@chakra-ui/react";
-import {FaPaw, FaCheck, FaTimes, IoPaw} from "react-icons/all";
+import {FaCheck, FaTimes, IoPaw} from "react-icons/all";
 
 import shawarma from "../../images/boston-shawarma-1.jpeg";
 
