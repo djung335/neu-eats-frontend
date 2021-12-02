@@ -29,7 +29,6 @@ const WriteReview = () => {
             onClick={onOpen}>
           <FaPenFancy/> &nbsp; Edit Profile
         </Button>
-
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay/>
           <ModalContent>
@@ -43,7 +42,6 @@ const WriteReview = () => {
                   size="sm"
               />
             </ModalBody>
-
             <ModalHeader>Email</ModalHeader>
             <ModalBody>
               <Textarea
@@ -53,7 +51,6 @@ const WriteReview = () => {
                   size="sm"
               />
             </ModalBody>
-
             <ModalHeader>Phone Number</ModalHeader>
             <ModalBody>
               <Textarea
@@ -63,8 +60,6 @@ const WriteReview = () => {
                   size="sm"
               />
             </ModalBody>
-
-
             <ModalFooter>
               <Button
                   colorScheme={'white'}

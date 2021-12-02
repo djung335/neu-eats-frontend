@@ -4,7 +4,7 @@ import {
   Button,
   Flex,
   Spacer,
-    Link, IconButton,
+  IconButton,
 } from "@chakra-ui/react";
 import {MdFastfood} from "react-icons/all";
 import { Outlet } from "react-router-dom";

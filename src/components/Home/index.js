@@ -8,33 +8,28 @@ import {
   VStack,
   HStack,
   Box,
-  Text
+  Text,
 } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons";
+import PopularReviews from "./PopularReviews";
 
 const Home = () => {
   return (
     <>
       <Center>
         <VStack>
-        <Heading mt={10} fontWeight="700" fontSize="5xl">NEU Eats</Heading>
-        <InputGroup>
-          <InputLeftElement children={<SearchIcon/>} />
-          <Input width="800px" placeholder="Search NEU Eats"></Input>
+          <Heading mt={10} fontWeight="700" fontSize="5xl">NEU Eats</Heading>
+          <InputGroup>
+            <InputLeftElement children={<SearchIcon/>} />
+            <Input width="800px" placeholder="Search NEU Eats"></Input>
           </InputGroup>
-       
-
-          </VStack>
-
+        </VStack>
       </Center>
       <HStack mt="12">
-       <Box w="50%">
-       <Text fontWeight="700" textAlign="left">Trending</Text>
-     </Box>
-
-     <Box w="50%">
-       <Text fontWeight="700" textAlign="left">Popular Reviews</Text>
-     </Box>
+        <Box w="50%" p={3}>
+         <Text fontWeight="700" textAlign="left">Trending</Text>
+        </Box>
+        <PopularReviews/>
      </HStack>
      </>
   );
