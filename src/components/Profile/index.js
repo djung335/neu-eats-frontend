@@ -14,6 +14,7 @@ const Profile = () => {
           <ProfileCard/>
         </Box>
       </Flex>
+
   );
 
 
