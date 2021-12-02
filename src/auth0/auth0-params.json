@@ -1,0 +1,8 @@
+{
+    "domain": "YOUR_DOMAIN_NAME",
+    "clientId": "YOUR_CLIENT_ID",
+    "callbackUrl": "http://localhost:3000",
+    "realm": "YOUR_DB_NAME",
+    "apiAudience": "YOUR_API_AUDIENCE",
+    "scope": "read:current_user update:current_user_metadata"
+}
