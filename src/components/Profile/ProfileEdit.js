@@ -9,16 +9,15 @@ import {
 import {FaPenFancy} from "react-icons/all";
 import React from "react";
 
-
 const WriteReview = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const {isOpen, onOpen, onClose} = useDisclosure()
   let [value, setValue] = React.useState("")
 
   let handleInputChange = (e) => {
     let inputValue = e.target.value
     setValue(inputValue)
   }
-  return(
+  return (
       <>
         <Button
             mr={3}
@@ -32,7 +31,7 @@ const WriteReview = () => {
         </Button>
 
         <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
+          <ModalOverlay/>
           <ModalContent>
             <ModalHeader>Bio</ModalHeader>
             <ModalCloseButton/>

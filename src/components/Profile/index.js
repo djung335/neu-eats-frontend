@@ -9,17 +9,13 @@ const Profile = () => {
 
       <Flex>
         <Box w="60%" paddingLeft="100px">
-
-
           <ProfileReviews/>
-
         </Box>
         <Box w="40%">
           <ProfileCard/>
         </Box>
-
-
       </Flex>
+
   );
 
 
