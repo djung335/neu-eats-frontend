@@ -2,10 +2,10 @@ import React from "react";
 import { Box, InputGroup, Input, InputLeftElement, Link, Button, FormControl, Heading } from "@chakra-ui/react";
 import { FaLock, FaUserAlt } from "react-icons/all";
 import { Link as ReachLink } from "react-router-dom"
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0 } from '@auth0/auth0-react';
 
 const LoginForm = () => {
-  const { loginWithRedirect } = useAuth0();
+const { loginWithRedirect } = useAuth0();
   return(
     <>
     <Box textAlign="start" mb="-0.25rem" ms={2}>
