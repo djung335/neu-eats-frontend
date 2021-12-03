@@ -23,20 +23,19 @@ const LoginForm = () => {
     login(email, password)
   };
 
-  const login = (username,password) => {
+  const login=(username,password)=>{
     auth0Client.client.login({
       realm:'react-user-demo',
       username,
       password
-    }, 
-    (err, authResult) => {
-      if (err) {
+    },(err,authResult)=>{
+      if(err){
         alert("Error",err.description)
         return
       }
-      if (authResult) {
+      if(authResult){
         window.origin = window.location.origin
-      }
+      } 
     })
   }
 
