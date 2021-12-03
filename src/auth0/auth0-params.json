@@ -1,8 +1,8 @@
 {
-    "domain": "YOUR_DOMAIN_NAME",
-    "clientId": "YOUR_CLIENT_ID",
-    "callbackUrl": "http://localhost:3000",
-    "realm": "YOUR_DB_NAME",
-    "apiAudience": "YOUR_API_AUDIENCE",
+    "domain": "dev--6teyw9w.us.auth0.com",
+    "clientId": "0wiFT0pY4bprUYTBsdQzuBvXIlS9nmIv",
+    "callbackUrl": "https://zen-panini-9cb73d.netlify.app/login",
+    "realm": "neu-eats-db",
+    "apiAudience": "https://dev--6teyw9w.us.auth0.com/api/v2/",
     "scope": "read:current_user update:current_user_metadata"
 }
