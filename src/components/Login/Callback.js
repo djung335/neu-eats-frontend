@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react'
 const Callback = ({auth}) => {
-  useEffect((auth) => {
+  useEffect(() => {
     auth.handleAuth()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
