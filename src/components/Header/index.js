@@ -21,7 +21,7 @@ const Header = ({auth}) => {
         <Box>
           <ReachLink to="/privacy">Privacy Policy</ReachLink>
           <Button m={3} onClick={auth.login}>
-          <ReachLink to="/login">Log in</ReachLink>
+            <ReachLink to="/login">Log in</ReachLink>
           </Button>
           <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/register">Register</ReachLink></Button>
         </Box>

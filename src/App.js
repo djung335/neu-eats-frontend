@@ -34,7 +34,7 @@ const App = ({history}) => {
               <Route path="profile" element={<Profile/>} />
             </Route>
             <Route path="/login" element={<Login/>} />
-            <Route path="/callback" render={props => <Callback auth={auth} {...props} />} />
+            <Route path="/" render={props => <Callback auth={auth} {...props} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgot" element={<ForgotPassword />} />
             <Route path="/setup" element={<RestaurantSetUp />} />
