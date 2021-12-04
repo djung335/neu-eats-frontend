@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 const Callback = ({auth}) => {
-  useEffect(() => {
+  useEffect((auth) => {
     auth.handleAuth()
   }, [])
 
