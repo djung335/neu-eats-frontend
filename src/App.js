@@ -13,11 +13,8 @@ import ForgotPassword from "./components/Login/forgotpassword";
 import RestaurantSetUp from "./components/Login/restaurantsetup";
 import Header from "./components/Header";
 import PrivacyPolicy from "./components/PrivacyPolicy";
-import Auth from "./Auth";
-import Callback from "./components/Login/Callback";
 
-const App = ({history}) => {
-  const auth = new Auth(history);
+const App = () => {
     return (
       <ChakraProvider>
         <BrowserRouter>
@@ -25,7 +22,7 @@ const App = ({history}) => {
           window.location.pathname !== "/login" ? <Header/>:null && window.location.pathname !== "/login" ? <Divider/>:null
           } */}
           <Routes>
-            <Route path="/" element={<Header auth={auth}/>} >
+            <Route path="/" element={<Header/>} >
             <Route path="" element={<Home/>} />
               <Route path="home" element={<Home/>} />
               <Route path="privacy" element={<PrivacyPolicy/>} />
@@ -34,7 +31,6 @@ const App = ({history}) => {
               <Route path="profile" element={<Profile/>} />
             </Route>
             <Route path="/login" element={<Login/>} />
-            <Route path="/callback" element={<Callback auth={auth}/>}/>
             <Route path="/register" element={<Register />} />
             <Route path="/forgot" element={<ForgotPassword />} />
             <Route path="/setup" element={<RestaurantSetUp />} />

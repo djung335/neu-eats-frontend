@@ -9,7 +9,23 @@ import {
 import {MdFastfood} from "react-icons/all";
 import { Outlet } from "react-router-dom";
 import { Link as ReachLink } from "react-router-dom";
-const Header = ({auth}) => {
+import { useAuth0 } from "@auth0/auth0-react";
+
+const Header = () => {
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  let button;
+  if (isAuthenticated) {
+    button = 
+      <Button m={3} onClick={() => loginWithRedirect()}>
+        <ReachLink to="/login">Login</ReachLink>
+      </Button>;
+  }
+  else {
+    button =
+      <Button m={3} onClick={() => logout({ returnTo: window.location.origin })}>
+        <ReachLink to="/login">Logout</ReachLink>
+      </Button>
+  }
   return(
     <>
       <Flex>
@@ -20,9 +36,7 @@ const Header = ({auth}) => {
         <Spacer />
         <Box>
           <ReachLink to="/privacy">Privacy Policy</ReachLink>
-          <Button m={3} onClick={auth.isAuthenticated() ? auth.logout : auth.login }>
-            <ReachLink to="/login">{ auth.isAuthenticated() ? "Log out" : "Log in" }</ReachLink>
-          </Button>
+          {button}
           <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/register">Register</ReachLink></Button>
         </Box>
       </Flex>
