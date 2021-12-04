@@ -9,7 +9,7 @@ import {
 import {MdFastfood} from "react-icons/all";
 import { Outlet } from "react-router-dom";
 import { Link as ReachLink } from "react-router-dom";
-const Header = () => {
+const Header = ({auth}) => {
   return(
     <>
       <Flex>
@@ -20,7 +20,7 @@ const Header = () => {
         <Spacer />
         <Box>
           <ReachLink to="/privacy">Privacy Policy</ReachLink>
-          <Button m={3}>
+          <Button m={3} onClick={auth.login}>
           <ReachLink to="/login">Log in</ReachLink>
           </Button>
           <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/register">Register</ReachLink></Button>

@@ -25,7 +25,7 @@ const App = ({history}) => {
           window.location.pathname !== "/login" ? <Header/>:null && window.location.pathname !== "/login" ? <Divider/>:null
           } */}
           <Routes>
-            <Route path="/" element={<Header/>} >
+            <Route path="/" element={<Header auth={auth}/>} >
             <Route path="" element={<Home/>} />
               <Route path="home" element={<Home/>} />
               <Route path="privacy" element={<PrivacyPolicy/>} />
@@ -33,7 +33,7 @@ const App = ({history}) => {
               <Route path="details" element={<Details/>} />
               <Route path="profile" element={<Profile/>} />
             </Route>
-            <Route path="/login" element={<Login auth={auth}/>} />
+            <Route path="/login" element={<Login/>} />
             <Route path="/callback" render={props => <Callback auth={auth} {...props} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgot" element={<ForgotPassword />} />

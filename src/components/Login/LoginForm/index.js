@@ -4,7 +4,7 @@ import { FaLock, FaUserAlt } from "react-icons/all";
 import { Link as ReachLink } from "react-router-dom"
 import { useAuth0 } from '@auth0/auth0-react';
 
-const LoginForm = ({auth}) => {
+const LoginForm = () => {
   const {loginWithRedirect} = useAuth0()
   return(
     <>

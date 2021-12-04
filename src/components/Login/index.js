@@ -4,11 +4,11 @@ import LeftSide from "./LeftSide/";
 import RightSide from "./RightSide/";
 import LoginForm from "./LoginForm/";
 
-const Login = ({auth}) => {
+const Login = () => {
   return(
     <Flex minH="100vh">
       <LeftSide/>
-      <RightSide component={<LoginForm auth={auth} />}/>
+      <RightSide component={<LoginForm />}/>
     </Flex>
   );
 };
