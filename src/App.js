@@ -2,7 +2,7 @@ import './App.css';
 
 import React from "react";
 import Home from "./components/Home";
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import {ChakraProvider } from "@chakra-ui/react"
 import Search from "./components/Search";
 import Details from "./components/Details";
@@ -13,9 +13,11 @@ import ForgotPassword from "./components/Login/forgotpassword";
 import RestaurantSetUp from "./components/Login/restaurantsetup";
 import Header from "./components/Header";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import Auth from "./Auth";
+import Callback from "./components/Login/Callback";
 
-
-const App = () => {
+const App = ({history}) => {
+  const auth = new Auth(history);
     return (
       <ChakraProvider>
         <BrowserRouter>
@@ -31,7 +33,8 @@ const App = () => {
               <Route path="details" element={<Details/>} />
               <Route path="profile" element={<Profile/>} />
             </Route>
-            <Route path="/login" element={<Login/>} />
+            <Route path="/login" element={<Login auth={auth}/>} />
+            <Route path="/callback" render={props => <Callback auth={auth} {...props} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgot" element={<ForgotPassword />} />
             <Route path="/setup" element={<RestaurantSetUp />} />
