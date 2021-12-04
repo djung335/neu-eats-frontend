@@ -14,7 +14,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Header = () => {
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   let button;
-  if (isAuthenticated) {
+  if (!isAuthenticated) {
     button = 
       <Button m={3} onClick={() => loginWithRedirect()}>
         <ReachLink to="/login">Login</ReachLink>
