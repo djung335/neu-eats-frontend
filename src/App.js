@@ -18,6 +18,8 @@ import Callback from "./components/Login/Callback";
 
 const App = ({history}) => {
   const auth = new Auth(history);
+  const CallbackRoute = () => { return props => <Callback auth = {auth} {...props} />};
+  
     return (
       <ChakraProvider>
         <BrowserRouter>
@@ -34,7 +36,7 @@ const App = ({history}) => {
               <Route path="profile" element={<Profile/>} />
             </Route>
             <Route path="/login" element={<Login/>} />
-            <Route path="/callback" element={props => <Callback auth={auth} {...props} />} />
+            <Route path="/callback" element={<CallbackRoute/>} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgot" element={<ForgotPassword />} />
             <Route path="/setup" element={<RestaurantSetUp />} />
