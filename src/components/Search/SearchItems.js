@@ -8,15 +8,27 @@ import shawarma from "../../images/boston-shawarma-1.jpeg";
 import StarRatingComponent from "react-star-rating-component";
 
 const SearchItem = ({
-  rest = {
-    restIcon: "/images/java-logo.jpeg",
-    restName: "Java", restRating: 4,
-    restReviews: "10", restDes:"Lorem something",
-    studentRev: "10", otherRev: "4",
-    husky: true, discount: false,
-    tags: [ "Japanese", "Sushi", "Bar" ]
+  restaurant = {
+    restaurant_id: 10,
+    name: "Boston Shawarma",
+    address: "315 Huntington Ave",
+    city: "Boston",
+    state: "MA",
+    zip: "02115",
+    rating: 4.0,
+    reviewCount: 2,
+    studentReview: 3,
+    restaurantImage: "../../images/boston-shawarma-3.jpeg",
+    restaurantDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    attributes: {
+      HuskyDollars: true,
+      StudentDiscount: true
+    },
+    categories: ["Halal",
+      "Middle Eastern",
+      "Mediterranean"]
   },
-  index={ }
+  index = {}
 }) => {
   return (
       <Box p={3} borderWidth={2} shadow="xl" rounded="lg">
@@ -26,7 +38,7 @@ const SearchItem = ({
           <Box>
           </Box>
           <VStack align="left">
-            <Heading fontSize="xl">{index}. {rest.restName}</Heading>
+            <Heading fontSize="xl">{index}. {restaurant.name}</Heading>
             <HStack>
 
               <StarRatingComponent
@@ -34,28 +46,35 @@ const SearchItem = ({
                   starColor={"#7986e6"}
                   emptyStarColor={"#b0b0b0"}
                   renderStarIcon={() => <IoPaw fontSize={'12px'}/>}
-                  value={rest.restRating}
+                  value={restaurant.rating}
               />
 
-              <Text fontSize="12" fontWeight="bold">{rest.restReviews} Reviews</Text>
-              <Text fontSize="12">({rest.studentRev} student reviews & {rest.otherRev} other reviews)</Text>
+              <Text fontSize="12" fontWeight="bold">{restaurant.reviewCount
+              + restaurant.studentReview} Reviews</Text>
+              <Text fontSize="12">({restaurant.studentReview} student reviews
+                & {restaurant.reviewCount} other reviews)</Text>
             </HStack>
-            <Text>{rest.restDes}</Text>
+            <Text>{restaurant.restaurantDescription}</Text>
             <hr/>
             <HStack>
-              {rest.husky && <FaCheck fontSize="12" color="green"/>}
-              {!rest.husky && <FaTimes fontSize="12" color="red"/>}
+              {restaurant.attributes.HuskyDollars && <FaCheck fontSize="12"
+                                                              color="green"/>}
+              {!restaurant.attributes.HuskyDollars && <FaTimes fontSize="12"
+                                                               color="red"/>}
               <Text fontSize="12">Husky Dollars</Text>
 
-              {rest.discount && <FaCheck fontSize="12" color="green"/>}
-              {!rest.discount && <FaTimes fontSize="12" color="red"/>}
+              {restaurant.attributes.StudentDiscount && <FaCheck fontSize="12"
+                                                                 color="green"/>}
+              {!restaurant.attributes.StudentDiscount && <FaTimes fontSize="12"
+                                                                  color="red"/>}
               <Text fontSize="12">Student Discount</Text>
             </HStack>
 
             <HStack>
-            {rest.tags.map((tags) => {
-              return <Box fontSize="12" borderRadius="md" background="#7986e6" color="white" p="0.5">{tags}</Box>
-            })}
+              {restaurant.categories.map((tags) => {
+                return <Box fontSize="12" borderRadius="md" background="#7986e6"
+                            color="white" p="0.5">{tags}</Box>
+              })}
             </HStack>
 
           </VStack>

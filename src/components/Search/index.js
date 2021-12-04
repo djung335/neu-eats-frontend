@@ -1,6 +1,7 @@
 import React from "react";
 import {Box, Flex, Text, VStack} from "@chakra-ui/react";
-import rest from "./rest.json"
+
+import restaurant from "../../reducers/data/restaurants.json"
 import SearchItems from "./SearchItems";
 
 const Search = () => {
@@ -12,11 +13,11 @@ const Search = () => {
 
           {
 
-            rest.map((rest, index) => {
+            restaurant.map((restaurant, index) => {
               return (
                   <VStack spacing="12px">
                     <Box/>
-                    <SearchItems rest={rest} index={index + 1}/>
+                    <SearchItems restaurant={restaurant} index={index + 1}/>
                   </VStack>
               );
             })

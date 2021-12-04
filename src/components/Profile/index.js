@@ -8,10 +8,10 @@ const Profile = () => {
   return(
       <Flex>
         <Box w="60%" paddingLeft="100px">
-          <ProfileReviews/>
+          <ProfileReviews />
         </Box>
         <Box w="40%">
-          <ProfileCard/>
+          <ProfileCard />
         </Box>
       </Flex>
 
