@@ -20,8 +20,8 @@ const Header = ({auth}) => {
         <Spacer />
         <Box>
           <ReachLink to="/privacy">Privacy Policy</ReachLink>
-          <Button m={3} onClick={auth.login}>
-            <ReachLink to="/login">Log in</ReachLink>
+          <Button m={3} onClick={auth.isAuthenticated() ? auth.logout : auth.login }>
+            <ReachLink to="/login">{ auth.isAuthenticated() ? "Log out" : "Log in" }</ReachLink>
           </Button>
           <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/register">Register</ReachLink></Button>
         </Box>
