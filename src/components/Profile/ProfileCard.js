@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import dave from "../../images/dave.jpeg";
 import {
   Heading,
@@ -13,23 +13,22 @@ import {
 } from '@chakra-ui/react';
 import ProfileEdit from "./ProfileEdit";
 
-const ProfileCard = ({
-  user = {
-    user: false,
-    owner: true,
-    restName: "Qdoba",
-    email: "qdoba.com",
-    phoneNumber: "(123)-456-7890",
-    reviews: "2",
-    friends: "10",
-    bio: "Ut enim ad minim veniam, quis nostrud exercitation ullamco\n"
-        + "              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\n"
-        + "              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n"
-        + "              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt\n"
-        + "              mollit anim id est laborum."
+import { API_URL } from "../../consts";
+import { useNavigate } from "react-router-dom";
 
+const ProfileCard = () => {
+  const [user, setUser] = useState({});
+  const navigate = useNavigate();
+  const getProfile = () => {
+    fetch(`${API_URL}/profile`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => res.json())
+      .then(user => {
+        setUser(user);
+    }).catch(e => navigate('/login'));
   }
-}) => {
+  useEffect(getProfile, [navigate]);
   return (
 
       <Flex py={6} paddingLeft={'175px'}>
@@ -53,17 +52,15 @@ const ProfileCard = ({
             </Box>
 
             <Box p={6}>
-              {user.owner &&
               <Stack spacing={0} align={'center'} mb={5}>
                 <Heading fontSize={'18px'} fontStyle={'Bold'}>
-                  Dave Patterson (You)
+                {user.username}
                 </Heading>
                 <Heading fontSize={'14px'} fontStyle={'Bold'}>Owner
                   of {user.restName}</Heading>
 
               </Stack>
-              }
-              {(!user.user && !user.owner) &&
+              {/*{(!user.user && !user.owner) &&
               <Stack spacing={0} align={'center'} mb={5}>
                 <Heading fontSize={'18px'} fontStyle={'Bold'}>
                   Dave Patterson
@@ -71,13 +68,12 @@ const ProfileCard = ({
                 <Heading fontSize={'14px'} fontStyle={'Bold'}>Owner
                   of {user.restName}</Heading>
               </Stack>
-              }
+              }*/}
 
 
               {user.user &&
               <Stack spacing={0} align={'center'} mb={5}>
                 <Heading fontSize={'18px'} fontStyle={'Bold'}>
-                  Dave Patterson (You)
                 </Heading>
                 <Heading fontSize={'14px'}
                          fontStyle={'Bold'}>Friends: {user.friends} |
