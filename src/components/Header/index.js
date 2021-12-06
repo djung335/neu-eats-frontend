@@ -15,8 +15,9 @@ import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState({});
+  /*const [user, setUser] = useState({});*/
   const [auth, setAuth] = useState({});
+  /*
   const getProfile = () => {
     fetch(`${API_URL}/profile`, {
       method: 'POST',
@@ -26,6 +27,7 @@ const Header = () => {
         setUser(user);
     })
   }
+  */
   const getAuth = () => {
     fetch(`${API_URL}/auth`, {
       method: 'POST',
@@ -47,7 +49,7 @@ const Header = () => {
     });
   }
 
-  useEffect(getProfile, [navigate]);
+  /* useEffect(getProfile, [navigate]); */
 
 
   let button;
