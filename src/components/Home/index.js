@@ -7,8 +7,6 @@ import {
   Heading,
   VStack,
   HStack,
-  Box,
-  Text,
 } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons";
 import PopularReviews from "./PopularReviews";

@@ -14,12 +14,12 @@ import React from "react";
 
 const WriteReview = () => {
   const {isOpen, onOpen, onClose} = useDisclosure()
-  let [value, setValue] = React.useState("")
+  /*let [value, setValue] = React.useState("")
 
   let handleInputChange = (e) => {
     let inputValue = e.target.value
     setValue(inputValue)
-  }
+  }*/
 
   return (
       <>
