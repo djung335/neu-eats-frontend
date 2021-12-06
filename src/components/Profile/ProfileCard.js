@@ -31,7 +31,6 @@ const ProfileCard = () => {
   useEffect(getProfile, [navigate]);
 
   return (
-
       <Flex py={6} paddingLeft={'175px'}>
         <VStack>
           <Box
@@ -45,9 +44,7 @@ const ProfileCard = () => {
               <Image
                   h={'75%'}
                   w={'full'}
-                  src={
-                    dave
-                  }
+                  src={dave}
                   objectFit={'cover'}
               />
             </Box>
@@ -64,10 +61,10 @@ const ProfileCard = () => {
               {/*{(!user.user && !user.owner) &&
               <Stack spacing={0} align={'center'} mb={5}>
                 <Heading fontSize={'18px'} fontStyle={'Bold'}>
-                  Dave Patterson
+                  {user.name}
                 </Heading>
                 <Heading fontSize={'14px'} fontStyle={'Bold'}>Owner
-                  of {user.restName}</Heading>
+                  of {user.restaurant}</Heading>
               </Stack>
               }*/}
 

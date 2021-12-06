@@ -5,27 +5,24 @@ import {
 import React from "react";
 
 
-import reviews from "./reviews.json"
+
 import ProfileReviewItem from "./ProfileReviewItem";
+import reviews from "../../reducers/data/reviews.json";
 
-
-const ProfileReviews = ({
-  user = {
-    user: false,
-    owner: true,
-    restName: "Qdoba",
-    email: "qdoba.com",
-    phoneNumber:"(123)-456-7890",
-    reviews:"2",
-    friends:"10"
-
-  }
-}) => {
+const ProfileReviews = ({user = {name: "Dave peters",
+  user: true,
+  userName: "dave24",
+  restaurant: "Qdoba",
+  email: "qdoba.com",
+  phoneNumber: "(123)-456-7890",
+  reviews: "2",
+  friends: "10",
+  bio: "Ut enim ad minim veniam, quis nostrud exercitation"}}) => {
   return(
       <>
-        {user.owner && <Heading size={'lg'}>Your Restaurant Reviews</Heading>}
+
         {user.user && <Heading size={'lg'}>Your Reviews</Heading>}
-        {!user.user && !user.owner && <Heading size={'lg'}>{user.restName}'s Reviews</Heading>}
+
         {
           reviews.map((rest) => {
             return(

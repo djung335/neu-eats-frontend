@@ -2,32 +2,32 @@
     {"review": "There's a couple other Mexican restaurants on Huntington Ave, but this one definitely stands out from the rest...",
     "restaurant": "Mamacita Mexican Comida",
     "reviewer": "Alex G.",
-    "profile" : "./images/alex.jpeg"}, 
+    "profile" : "../../images/alexa.jpeg"}, 
 
     {"review": "Buttermilk & Bourbon has been on my list for a while and it didn't disappoint! It is so beautiful inside...",
     "restaurant": "Buttermilk & Bourbon",
     "reviewer": "Sam C.",
-    "profile" : "sam.jpg"},
+    "profile" : "../../images/alexa.jpeg"},
 
     {"review": "I only eat out at one place and its Boston Shawarma. This place is definitely doing something right.",
     "restaurant": "Boston Shawarma",
     "reviewer": "Daniel J.",
-    "profile" : "sam.jpg"},
+    "profile" : "../../images/dave.jpeg"},
 
     {"review": "Exquisite food and drinks amazing staff and atmosphere. But Getting served by Cesar made the experience beyond...",
     "restaurant": "Yvonne's",
     "reviewer": "Alexa S.",
-    "profile" : "alexa.jpg"},
+    "profile" : "../../images/alexa.jpeg"},
 
     {"review": "Amazing Food!",
-    "restaurant": "El Jefe's Taqueria - Symphony",
+    "restaurant": "El Jefe's Taqueria",
     "reviewer": "Peter S.",
-    "profile" : "peter.jpg"},
+    "profile" : "../../images/alexa.jpeg"},
 
     {"review": "Not that many people on Thursday night. No reservation and walk-in only. The Lobster roll tastes fresh and great!",
     "restaurant": "Luke's Lobster Back Bay",
     "reviewer": "Jessica T.",
-    "profile" : "jessica.jpg"}
+    "profile" : "../../images/alexa.jpeg"}
 
 
 
