@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
+  const [auth, setAuth] = useState({});
   const getProfile = () => {
     fetch(`${API_URL}/profile`, {
       method: 'POST',
@@ -25,15 +26,32 @@ const Header = () => {
         setUser(user);
     })
   }
+  const getAuth = () => {
+    fetch(`${API_URL}/auth`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => res.json())
+      .then(auth => {
+        setAuth(auth);
+    })
+  }
+  useEffect(getAuth, [navigate]);
+
   const logout = () => {
     fetch(`${API_URL}/logout`, {
       method: 'POST',
       credentials: 'include'
-    }).then(res => navigate('/'));
+    }).then(res => navigate(''))
+      .then(res => { 
+        window.location.reload();
+    });
   }
+
   useEffect(getProfile, [navigate]);
+
+
   let button;
-  if (!user) {
+  if (typeof(auth) == "boolean") {
     button = <Button m={3} onClick={ logout }>
       Logout
     </Button>

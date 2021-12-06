@@ -16,10 +16,10 @@ const LoginForm = () => {
         'content-type': 'application/json'
       }
     }).then(status => {
-      navigate('/profile')
+      navigate('/')
     });
   }
-  
+
   return(
     <>
     <Box textAlign="start" mb="-0.25rem" ms={2}>

@@ -29,6 +29,7 @@ const ProfileCard = () => {
     }).catch(e => navigate('/login'));
   }
   useEffect(getProfile, [navigate]);
+
   return (
 
       <Flex py={6} paddingLeft={'175px'}>
