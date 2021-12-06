@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import dave from "../../images/dave.jpeg";
 import {
   Heading,
@@ -13,16 +13,23 @@ import {
 } from '@chakra-ui/react';
 import ProfileEdit from "./ProfileEdit";
 
-const ProfileCard = ({user = {
-  name: "Dave peters",
-  user: true,
-  userName: "dave24",
-  restaurant: "Qdoba",
-  email: "qdoba.com",
-  phoneNumber: "(123)-456-7890",
-  reviews: "2",
-  friends: "10",
-  bio: "Ut enim ad minim veniam, quis nostrud exercitation"}}) => {
+import { API_URL } from "../../consts";
+import { useNavigate } from "react-router-dom";
+
+const ProfileCard = () => {
+  const [user, setUser] = useState({});
+  const navigate = useNavigate();
+  const getProfile = () => {
+    fetch(`${API_URL}/profile`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => res.json())
+      .then(user => {
+        setUser(user);
+    }).catch(e => navigate('/login'));
+  }
+  useEffect(getProfile, [navigate]);
+
   return (
       <Flex py={6} paddingLeft={'175px'}>
         <VStack>
@@ -43,8 +50,15 @@ const ProfileCard = ({user = {
             </Box>
 
             <Box p={6}>
+              <Stack spacing={0} align={'center'} mb={5}>
+                <Heading fontSize={'18px'} fontStyle={'Bold'}>
+                {user.username}
+                </Heading>
+                <Heading fontSize={'14px'} fontStyle={'Bold'}>Owner
+                  of {user.restName}</Heading>
 
-              {(!user.user ) &&
+              </Stack>
+              {/*{(!user.user && !user.owner) &&
               <Stack spacing={0} align={'center'} mb={5}>
                 <Heading fontSize={'18px'} fontStyle={'Bold'}>
                   {user.name}
@@ -52,13 +66,12 @@ const ProfileCard = ({user = {
                 <Heading fontSize={'14px'} fontStyle={'Bold'}>Owner
                   of {user.restaurant}</Heading>
               </Stack>
-              }
+              }*/}
 
 
               {user.user &&
               <Stack spacing={0} align={'center'} mb={5}>
                 <Heading fontSize={'18px'} fontStyle={'Bold'}>
-                  {user.name} (You)
                 </Heading>
                 <Heading fontSize={'14px'}
                          fontStyle={'Bold'}>Friends: {user.friends} |
