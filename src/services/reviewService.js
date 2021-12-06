@@ -1,4 +1,4 @@
-const REVIEW_API = "localhost:4000/api/reviews";
+const REVIEW_API = "https://neu-eats-backend.herokuapp.com";
 
 export const fetchAllReviews = (dispatch) =>
     fetch(REVIEW_API)
