@@ -59,6 +59,7 @@ const Header = () => {
     button = <Button m={3} onClick={ logout }>
       Logout
     </Button>
+    register = <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/profile">Profile</ReachLink></Button>
   }
   else {
     button = <Button m={3}>
