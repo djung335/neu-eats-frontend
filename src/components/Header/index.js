@@ -62,7 +62,7 @@ const Header = () => {
   }
   else {
     button = <Button m={3}>
-      <ReachLink to="/login">Login</ReachLink>;
+      <ReachLink to="/login">Login</ReachLink>
     </Button>
     register = <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/register">Register</ReachLink></Button>
   }
