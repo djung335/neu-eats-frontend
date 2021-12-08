@@ -49,6 +49,7 @@ const Header = () => {
     });
   }
 
+  console.log(auth);
   /* useEffect(getProfile, [navigate]); */
 
 
