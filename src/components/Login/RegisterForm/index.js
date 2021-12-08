@@ -56,7 +56,7 @@ const RegisterForm = () => {
                     </Button>
                 </Box>
                 <Box display="flex" justifyContent="end">
-                    <Checkbox color="#a2a2a2" size="sm" mt={2}> restaurant owner </Checkbox>
+                    <Checkbox onChange={(e) => setUser({...user, owner: e.target.isChecked})} color="#a2a2a2" size="sm" mt={2}> restaurant owner </Checkbox>
                 </Box>
         </form>
     </Box>
