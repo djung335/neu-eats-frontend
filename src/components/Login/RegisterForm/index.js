@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Box, InputGroup, Input, InputLeftElement, Text, Link, Button, FormControl, Heading, Checkbox } from "@chakra-ui/react";
-import { FaLock, FaUserAlt } from "react-icons/all";
+import { Box, InputGroup, Input, Text, Link, Button, FormControl, Heading, Checkbox } from "@chakra-ui/react";
 import { Link as ReachLink, useNavigate } from "react-router-dom"
 import { API_URL } from "../../../consts";
 
