@@ -5,7 +5,7 @@ import { Link as ReachLink, useNavigate } from "react-router-dom"
 import { API_URL } from "../../../consts";
 
 const RegisterForm = () => {
-  const [user, setUser] = useState({username: '', password: ''});
+  const [user, setUser] = useState({email: '', username: '', password: '', firstName: '', lastName: '', owner: false});
   const navigate = useNavigate();
   const register = () => {
     fetch(`${API_URL}/register`, {
@@ -19,28 +19,36 @@ const RegisterForm = () => {
   };
   return(
     <>
-    <Box textAlign="start" mb="-0.25rem" ms={2} mt={"1em"}>
+    <Box textAlign="start" ms={2} mt={"1em"}>
         <Heading fontSize="2em" color="#4d4c4c">Create a new account.</Heading>
     </Box>
     <Box my={4}>
         <form>
             <FormControl>
                 <InputGroup>
-                <InputLeftElement pointerEvents="none" children={<FaUserAlt color="#a2a2a2"/>} mt="0.85em" ml={1}/>
-                    <Input placeholder="username" value={ user.username } onChange={(e) => setUser({...user, username: e.target.value})} _placeholder={{color: "#a2a2a2"}} pr="10em" pt="2em" pb="2em" borderRadius="0.75em"/>
+                    <Input placeholder="First Name" value={ user.firstName } onChange={(e) => setUser({...user, firstName: e.target.value})} _placeholder={{color: "#a2a2a2"}} pr="1em" pt="1.8em" pb="1.8em" me={2} borderRadius="0.75em"/>
+                    <Input placeholder="Last Name" value={ user.lastName } onChange={(e) => setUser({...user, lastName: e.target.value})} _placeholder={{color: "#a2a2a2"}} pr="1em" pt="1.8em" pb="1.8em" ms={2} borderRadius="0.75em"/>
                 </InputGroup>
             </FormControl>
             <FormControl mt={5}>
                 <InputGroup>
-                <InputLeftElement pointerEvents="none" children={<FaLock color="#a2a2a2"/>} mt="0.85em" ml={1}/>
-                    <Input type="password" placeholder="password" value={ user.password } onChange={(e) => setUser({...user, password: e.target.value})} _placeholder={{color: "#a2a2a2"}} pr="10em" pt="2em" pb="2em" borderRadius="0.75em"/>
+                    <Input type="email" placeholder="email" value={ user.email } onChange={(e) => setUser({...user, email: e.target.value})} _placeholder={{color: "#a2a2a2"}} pr="10em" pt="1.8em" pb="1.8em" borderRadius="0.75em"/>
                 </InputGroup>
             </FormControl>
             <FormControl mt={5}>
                 <InputGroup>
-                <InputLeftElement pointerEvents="none" children={<FaLock color="#a2a2a2"/>} mt="0.85em" ml={1}/>
-                    <Input type="password" placeholder="confirm password" onChange={(e) => setUser({...user, verifyPassword: e.target.value})} _placeholder={{color: "#a2a2a2"}} pr="10em" pt="2em" pb="2em" borderRadius="0.75em"/>
+                    <Input type="password" placeholder="password" value={ user.password } onChange={(e) => setUser({...user, password: e.target.value})} _placeholder={{color: "#a2a2a2"}} pr="10em" pt="1.8em" pb="1.8em" borderRadius="0.75em"/>
                 </InputGroup>
+            </FormControl>
+            <FormControl mt={5}>
+                <InputGroup>
+                    <Input type="password" placeholder="confirm password" onChange={(e) => setUser({...user, verifyPassword: e.target.value})} _placeholder={{color: "#a2a2a2"}} pr="10em" pt="1.8em" pb="1.8em" borderRadius="0.75em"/>
+                </InputGroup>
+            <FormControl mt={5}>
+                <InputGroup>
+                    <Input placeholder="username" value={ user.username } onChange={(e) => setUser({...user, username: e.target.value})} _placeholder={{color: "#a2a2a2"}} pr="10em" pt="1.8em" pb="1.8em" borderRadius="0.75em"/>
+                </InputGroup>
+            </FormControl>
             </FormControl>
             <Text color="#a2a2a2" fontSize="0.6em" mt={1} ml={3}> already a member? <Link as={ReachLink} to="/login" color="#afcdf0" fontSize="0.7em" fontWeight="bold" ml={1}> login </Link> </Text> 
                 <Box display="flex" justifyContent="end">

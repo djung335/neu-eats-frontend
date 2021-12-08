@@ -1,4 +1,4 @@
-const REVIEW_API = "https://neu-eats-backend.herokuapp.com";
+const REVIEW_API = "https://neu-eats-backend.herokuapp.com/api";
 
 export const fetchAllReviews = (dispatch) =>
     fetch(REVIEW_API)
