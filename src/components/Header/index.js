@@ -54,6 +54,7 @@ const Header = () => {
 
 
   let button;
+  let register;
   if (typeof(auth) == "boolean") {
     button = <Button m={3} onClick={ logout }>
       Logout
@@ -61,8 +62,9 @@ const Header = () => {
   }
   else {
     button = <Button m={3}>
-      <ReachLink to="/login">Login</ReachLink>
+      <ReachLink to="/login">Login</ReachLink>;
     </Button>
+    register = <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/register">Register</ReachLink></Button>
   }
   return(
     <>
@@ -75,7 +77,7 @@ const Header = () => {
         <Box>
           <ReachLink to="/privacy">Privacy Policy</ReachLink>
           {button}
-          <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/register">Register</ReachLink></Button>
+          {register}
         </Box>
       </Flex>
       <Outlet />
