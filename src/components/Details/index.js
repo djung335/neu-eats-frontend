@@ -1,54 +1,39 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Center,
   VStack,
 } from "@chakra-ui/react";
-import Reviews from "./Reviews";
+import {API_URL} from "../../consts";
 import RestaurantPage from "./RestaurantPage";
+import ReviewsNormal from "./Reviews";
+import ReviewsRestaurant from "./ReviewsRestaurant";
+import ReviewsGuest from "./ReviewsGuest";
 
-const Details = ({
-  restaurant = {
-    "restaurant_id": 10,
-    "name": "Boston Shawarma",
-    "address": "315 Huntington Ave",
-    "city": "Boston",
-    "state": "MA",
-    "zip": "02115",
-    "rating": 4.0,
-    "reviewCount": 2,
-    "restaurantImage": "../../images/boston-shawarma-2.jpeg",
-    "attributes": {
-      "HuskyDollars": true,
-      "StudentDiscount": true
-    },
-    "categories": [
-      "Halal",
-      "Middle Eastern",
-      "Mediterranean"
-    ],
-    "hours": {
-      "MondayStart": "10:00:00",
-      "MondayEnd": "23:00:00",
-      "TuesdayStart": "10:00:00",
-      "TuesdayEnd": "23:00:00",
-      "WednesdayStart": "10:00:00",
-      "WednesdayEnd": "23:00:00",
-      "ThursdayStart": "10:00:00",
-      "ThursdayEnd": "23:00:00",
-      "FridayStart": "10:00:00",
-      "FridayEnd": "23:00:00",
-      "SaturdayStart": "10:00:00",
-      "SaturdayEnd": "23:00:00",
-      "SundayStart": "10:00:00",
-      "SundayEnd": "23:00:00"
+const Details = () => {
+    fetch(`${API_URL}/api/loggedIn`)
+    .then(res => res.json())
+    .then(res => {
+      this.setState({
+        ...this.state,
+      })
+    })
+
+    const isLoggedIn = () => {
+      // if logged in and not restaurant owner, then return corresponding page
+      if (this.state.d && this.state.owner) {
+        return <ReviewsNormal/>;
+      } else if (this.state.d && !this.state.owner) {
+        return <ReviewsRestaurant/>;
+      } else {
+        return <ReviewsGuest/>;
+      }
     }
-  }
-}) => {
+
   return(
       <Center>
         <VStack>
           <RestaurantPage/>
-          <Reviews restaurant={restaurant.name}/>
+          {isLoggedIn()}
         </VStack>
       </Center>
   );

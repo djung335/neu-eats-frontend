@@ -4,13 +4,13 @@ import {
 import React from "react";
 import reviews from "../../reducers/data/reviews.json"
 import ReviewItem from "./ReviewItem";
-import WriteReviewNormal from "./WriteReviewNormal";
+import WriteReviewGuest from "./WriteReviewGuest";
 
-const ReviewsNormal = (restaurant) => {
+const ReviewsGuest = (restaurant) => {
   return(
       <>
         <Heading size={'lg'}>Reviews</Heading>
-        <WriteReviewNormal/>
+        <WriteReviewGuest/>
         {
           reviews.map(review => {
             return(
@@ -22,4 +22,4 @@ const ReviewsNormal = (restaurant) => {
   )
 }
 
-export default ReviewsNormal;
+export default ReviewsGuest;
