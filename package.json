@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "@tomtom-international/web-sdk-maps": "^6.15.0",
+    "auth0-js": "^9.18.0",
     "documenu": "^1.1.0",
     "framer-motion": "^4.1.17",
     "react": "^17.0.2",

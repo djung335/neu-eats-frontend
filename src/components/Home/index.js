@@ -7,11 +7,10 @@ import {
   Heading,
   VStack,
   HStack,
-  Box,
-  Text,
 } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons";
 import PopularReviews from "./PopularReviews";
+import Trending from "./Trending";
 
 const Home = () => {
   return (
@@ -26,9 +25,7 @@ const Home = () => {
         </VStack>
       </Center>
       <HStack mt="12">
-        <Box w="50%" p={3}>
-         <Text fontWeight="700" textAlign="left">Trending</Text>
-        </Box>
+        <Trending/>
         <PopularReviews/>
      </HStack>
      </>
