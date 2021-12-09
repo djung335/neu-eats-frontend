@@ -7,7 +7,7 @@ import {
   ChakraProvider,
 } from "@chakra-ui/react"
 import Search from "./components/Search";
-import Details from "./components/Details";
+import Details from "./components/Details/DetailsNormal";
 import Profile from "./components/Profile";
 import Login from "./components/Login/";
 import Register from "./components/Login/register";
@@ -29,7 +29,7 @@ const App = () => {
               <Route path="home" element={<Home/>} />
               <Route path="privacy" element={<PrivacyPolicy/>} />
               <Route path=":searchTerm" element={<Search/>}/>
-              <Route path="details/:id" element={<Details/>}/>
+              <Route path="details" element={<Details/>}/>
               <Route path="search" element={<Search/>} />
               <Route path="profile" element={<Profile/>} />
             </Route>

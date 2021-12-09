@@ -10,7 +10,7 @@ import {FaPenFancy} from "react-icons/all";
 import React from "react";
 import Rating from "./Rating";
 
-const WriteReview = ({
+const WriteReviewNormal = ({
   restaurant = {
     "restaurant_id": 10,
     "name": "Boston Shawarma",
@@ -82,4 +82,4 @@ const WriteReview = ({
   )
 }
 
-export default WriteReview;
+export default WriteReviewNormal;

@@ -51,9 +51,9 @@ const RestaurantPage = () => {
               </HStack>
               <Text fontWeight={"bold"}>{restaurant.hours}</Text>
               <HStack>
-                <CheckIcon color={restaurant.attributes.HuskyDollars ? "lightGreen" : "red"}/>
+                <CheckIcon color={"red"}/>
                 <Text color={"white"}>husky dollars</Text>
-                <CheckIcon color={restaurant.attributes.StudentDiscount ? "lightGreen" : "red"}/>
+                <CheckIcon color={"red"}/>
                 <Text color={"white"}>student discount</Text>
               </HStack>
             </VStack>
