@@ -6,10 +6,7 @@ import {Link} from "react-router-dom";
 
 const Search = () => {
 
-
-
   const [restaurantTerm, setRestaurantTerm] = useState('');
-  const [distanceTerm, setDistanceTerm] = useState('1');
   const [restaurant, setRestaurant] = useState([]);
 
   const findRestaurant = () => {
@@ -25,17 +22,17 @@ const Search = () => {
   return (
       <VStack>
         <HStack>
-          <Text><b>Cuisine</b></Text>
+
+          <Text><b>Cuisine: </b></Text>
           <Input onChange={(e) =>
-              setRestaurantTerm(e.target.value)} />
-          
-          <Button onClick={findRestaurant}
-                  bg="#7986e6" color="white">
+              setRestaurantTerm(e.target.value)}
+                 placeholder={'What do you want?'}/>
+          <Button onClick={findRestaurant} bg="#7986e6" color="white">
             Search
           </Button>
         </HStack>
-
         <Box p="2" w="80%">
+
           <Text fontWeight="bold" fontSize="2em">Results
             for {restaurantTerm}...</Text>
 
@@ -55,11 +52,26 @@ const Search = () => {
                 );
               })
             }
+
+            <Text fontWeight="bold" fontSize="2em">Search results for {restaurantTerm}...</Text>
+          {
+            restaurant.map((restaurant, index) => {
+              return (
+                  <Box key={restaurant.restaurant_id}>
+                    <Link to={`/details/${restaurant.restaurant_id}`}>
+                      <VStack spacing="12px">
+                        <Box/>
+                        <SearchItems restaurant={restaurant}
+                                     index={index + 1}/>
+                      </VStack>
+                    </Link>
+                  </Box>
+              );
+            })
+          }
         </Box>
       </VStack>
-
   );
-
 };
 
 export default Search;

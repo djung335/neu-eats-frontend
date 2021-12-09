@@ -22,8 +22,8 @@ const Header = () => {
       method: 'POST',
       credentials: 'include'
     }).then(res => res.json())
-      .then(user => {
-        setUser(user);
+    .then(user => {
+      setUser(user);
     })
   }
 
@@ -32,8 +32,8 @@ const Header = () => {
       method: 'POST',
       credentials: 'include'
     }).then(res => res.json())
-      .then(auth => {
-        setAuth(auth);
+    .then(auth => {
+      setAuth(auth);
     })
   }
   useEffect(getAuth, [navigate]);
@@ -43,8 +43,8 @@ const Header = () => {
       method: 'POST',
       credentials: 'include'
     }).then(res => navigate(''))
-      .then(res => { 
-        window.location.reload();
+    .then(res => {
+      window.location.reload();
     });
   }
 
@@ -68,21 +68,21 @@ const Header = () => {
     register = <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/register">Register</ReachLink></Button>
   }
   return(
-    <>
-      <Flex>
-        <Box p="3">
-        <IconButton as={ReachLink} to="/" icon={<MdFastfood size={25}/>} w="50px" h="50px" p={3} bg="#7986e6" borderRadius="10px" color="white"/>
-          {/*<Heading size="md">Chakra App</Heading>*/}
-        </Box>
-        <Spacer />
-        <Box>
-          <ReachLink to="/privacy">Privacy Policy</ReachLink>
-          {button}
-          {register}
-        </Box>
-      </Flex>
-      <Outlet />
-  </>
+      <>
+        <Flex>
+          <Box p="3">
+            <IconButton as={ReachLink} to="/" icon={<MdFastfood size={25}/>} w="50px" h="50px" p={3} bg="#7986e6" borderRadius="10px" color="white"/>
+            {/*<Heading size="md">Chakra App</Heading>*/}
+          </Box>
+          <Spacer />
+          <Box>
+            <ReachLink to="/privacy">Privacy Policy</ReachLink>
+            {button}
+            {register}
+          </Box>
+        </Flex>
+        <Outlet />
+      </>
   );
 
 };
