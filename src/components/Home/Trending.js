@@ -8,7 +8,6 @@ const Trending = () => {
     return(<Box w="50%" p={3}>
     <Text fontWeight="700" textAlign="left">Trending</Text>
     {/*{
-
 restaurant.map((restaurant, index) => {
   return (
       <VStack spacing="12px">
@@ -20,7 +19,6 @@ restaurant.map((restaurant, index) => {
       </VStack>
   );
 })
-
 }*/}
   </Box>); 
     

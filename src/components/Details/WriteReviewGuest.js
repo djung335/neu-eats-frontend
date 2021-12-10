@@ -3,6 +3,7 @@ import {
 } from "@chakra-ui/react";
 import {FaPenFancy} from "react-icons/all";
 import React from "react";
+import {Link} from "react-router-dom";
 
 const WriteReviewGuest = ({
   restaurant = {
@@ -37,14 +38,15 @@ const WriteReviewGuest = ({
 }) => {
   return(
       <>
-        <Button
-            mr={3}
-            colorScheme={'white'}
-            bg={'#aacaef'}
-            onClick={'/login'}
-        >
-          <FaPenFancy/> &nbsp; Write a Review
-        </Button>
+        <Link to={"/login"}>
+          <Button
+              mr={3}
+              colorScheme={'white'}
+              bg={'#aacaef'}
+          >
+            <FaPenFancy/> &nbsp; Write a Review
+          </Button>
+        </Link>
       </>
   )
 }
