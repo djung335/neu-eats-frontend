@@ -7,7 +7,13 @@ import {BsCurrencyDollar} from "react-icons/all";
 import StarRatingComponent from "react-star-rating-component";
 
 const SearchItem = ({
-  restaurant = {},
+  restaurant = {
+    price_range_num: 3,
+    cuisines: ['french', 'cafe'],
+    restaurant_phone: '123-456-7890',
+    restaurant_name: "NEU Eats"
+
+  },
   index = {}
 }) => {
 
@@ -36,7 +42,8 @@ const SearchItem = ({
             </HStack>
             <hr/>
             <HStack>
-              {restaurant.cuisines.map((tags) => {
+              {
+                restaurant.cuisines?.map((tags) => {
                 return <Box fontSize="12" borderRadius="md" background="#7986e6"
                             color="white" p="0.5">{tags}</Box>
               })}
