@@ -13,15 +13,17 @@ import StarRatingComponent from 'react-star-rating-component';
 import {useParams} from "react-router-dom";
 
 const RestaurantPage = () => {
-  const Documenu = require('documenu')
-  Documenu.configure('65ca9233213581c4962279e4e767f1ca')
   const params = useParams();
-  const [restaurant, setRestaurantDetails] = useState({Restaurants: ''});
-  const findRestaurantDetailsByID = () =>
-      fetch(`https://api.documenu.com/v2/restaurant/${params.id}`)
-      .then(res => res.json())
-      .then(restaurantInf => setRestaurantDetails(restaurantInf));
-  useEffect(findRestaurantDetailsByID, []);
+  const [restaurant, setRestaurant] = useState('');
+
+  const findRestaurantByID = () => {
+    fetch(
+        `https://api.documenu.com/v2/restaurant/${params.id}?key=65ca9233213581c4962279e4e767f1ca`)
+    .then(res => res.json())
+    .then(restaurant => setRestaurant(restaurant))
+  }
+
+  useEffect(findRestaurantByID, []);
   return(
       <>
         <Flex
@@ -29,16 +31,18 @@ const RestaurantPage = () => {
             h={'50vh'}
             paddingLeft={"20px"}
             paddingBottom={"20px"}
-            backgroundColor={"#aacaef"}
+            bgGradient={[
+              'linear(to-b, orange.200, teal.500)',
+            ]}
             backgroundSize={'cover'}
             backgroundPosition={'center center'}
         >
           <HStack align={'flex-end'} maxW={'2xl'} spacing={3}>
             <VStack align={'left'}>
-              <Heading color={"white"} as={'h2'} mb={0} size={'2xl'}>Boston Shawarma</Heading>
+              <Heading color={"white"} as={'h2'} mb={0} size={'2xl'}>{restaurant.restaurant_name}</Heading>
               <HStack spacing={"3px"}>
                 <StarRatingComponent
-                    name={restaurant.restaurant_name + " rating"}
+                    name={"restaurant rating"}
                     editing={false}
                     starColor={"#7986e6"}
                     emptyStarColor={"#b0b0b0"}
