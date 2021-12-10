@@ -1,9 +1,12 @@
 import React from "react";
-import {Text} from "@chakra-ui/react";
+import {Text, Heading, VStack} from "@chakra-ui/react";
 
 const PrivacyPolicy = () => {
 return(
-  <Text>Hello</Text>
+  <VStack>
+  <Heading>Privacy Policy</Heading>
+  <Text>Insert Privacy Policy Here</Text> 
+  </VStack>
 );
 };
 

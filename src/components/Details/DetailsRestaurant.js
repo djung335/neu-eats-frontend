@@ -3,7 +3,7 @@ import {
   Center,
   VStack,
 } from "@chakra-ui/react";
-import Reviews from "./Reviews";
+import Reviews from "./ReviewsNormal";
 import RestaurantPage from "./RestaurantPage";
 
 const DetailsRestaurant = () => {

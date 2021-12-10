@@ -12,7 +12,7 @@ const Search = () => {
 
   const findRestaurant = () => {
     fetch(
-        `https://api.documenu.com/v2/restaurants/search/geo?cuisine=${restaurantTerm}&lat=42.358990&lon=-71.058632&distance=1&key=22ea8db636a5fc9b62005e445f894b22`)
+        `https://api.documenu.com/v2/restaurants/search/geo?cuisine=${restaurantTerm}&lat=42.358990&lon=-71.058632&distance=1&key=65ca9233213581c4962279e4e767f1ca`)
     .then(res => res.json())
     .then(results => setRestaurant(results.data))
   }
