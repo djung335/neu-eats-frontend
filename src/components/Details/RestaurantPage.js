@@ -29,9 +29,7 @@ const RestaurantPage = () => {
             h={'50vh'}
             paddingLeft={"20px"}
             paddingBottom={"20px"}
-            backgroundImage={
-              restaurant.restaurantImage
-            }
+            backgroundColor={"#aacaef"}
             backgroundSize={'cover'}
             backgroundPosition={'center center'}
         >
