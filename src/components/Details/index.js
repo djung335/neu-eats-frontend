@@ -3,7 +3,6 @@ import {
   Center,
   VStack,
 } from "@chakra-ui/react";
-import {API_URL} from "../../consts";
 import RestaurantPage from "./RestaurantPage";
 import ReviewsNormal from "./Reviews";
 import ReviewsRestaurant from "./ReviewsRestaurant";

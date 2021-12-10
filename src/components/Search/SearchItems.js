@@ -4,26 +4,24 @@ import "./index.css"
 import {Box, Heading, HStack, Text, VStack} from "@chakra-ui/react";
 import {BsCurrencyDollar} from "react-icons/all";
 
-
-
 import StarRatingComponent from "react-star-rating-component";
 
 const SearchItem = ({
-  restaurant = {
-  },
+  restaurant = {},
   index = {}
 }) => {
 
   return (
       <Box p={3} borderWidth={2} shadow="xl" rounded="lg" w="80%">
         <HStack w="full">
-
           <Box>
           </Box>
           <VStack align="left">
-            <Heading fontSize="xl">{index}. {restaurant.restaurant_name}</Heading>
+            <Heading
+                fontSize="xl">{index}. {restaurant.restaurant_name}</Heading>
 
-           <Text fontSize={"sm"}>Phone Number: {restaurant.restaurant_phone}</Text>
+            <Text fontSize={"sm"}>Phone
+              Number: {restaurant.restaurant_phone}</Text>
             <Text fontSize={"sm"}>Address: {restaurant.address.formatted}</Text>
             <Text fontSize={"sm"}>Hours: {restaurant.hours}</Text>
             <HStack>
@@ -35,20 +33,14 @@ const SearchItem = ({
                   renderStarIcon={() => <BsCurrencyDollar fontSize={'12px'}/>}
                   value={restaurant.price_range_num}
               />
-
-
             </HStack>
-
             <hr/>
-
-
             <HStack>
               {restaurant.cuisines.map((tags) => {
                 return <Box fontSize="12" borderRadius="md" background="#7986e6"
                             color="white" p="0.5">{tags}</Box>
               })}
             </HStack>
-
           </VStack>
         </HStack>
       </Box>
