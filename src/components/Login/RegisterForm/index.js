@@ -21,7 +21,7 @@ const RegisterForm = () => {
   };
 
   const getUserType = () => {
-    fetch(`${API_URL}/getUserType`, {
+    fetch(`${API_URL}/userType`, {
       method: 'POST',
       credentials: 'include'
     }).then(res => res.json())
