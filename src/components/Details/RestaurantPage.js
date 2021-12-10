@@ -21,7 +21,7 @@ const RestaurantPage = () => {
       fetch(`https://api.documenu.com/v2/restaurant/${params.id}`)
       .then(res => res.json())
       .then(restaurantInf => setRestaurantDetails(restaurantInf));
-  useEffect(findRestaurantDetailsByID, []);
+  useEffect(findRestaurantDetailsByID);
   return(
       <>
         <Flex
