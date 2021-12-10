@@ -17,7 +17,7 @@ const Search = () => {
     .then(results => setRestaurant(results.data))
   }
 
-  useEffect(findRestaurant);
+  useEffect(findRestaurant, []);
 
   return (
       <VStack>
