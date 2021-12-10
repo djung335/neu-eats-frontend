@@ -5,7 +5,7 @@ import { API_URL } from "../../../consts";
 
 const RegisterForm = () => {
   const [userType, setUserType] = useState();
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState();
   const [user, setUser] = useState({email: '', username: '', password: '', firstName: '', lastName: '', owner: selected});
 
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const RegisterForm = () => {
       }
     }).then(status => navigate('/profile'));
   };
-
+  
   const getUserType = () => {
     fetch(`${API_URL}/userType`, {
       method: 'POST',
@@ -32,6 +32,8 @@ const RegisterForm = () => {
   useEffect(getUserType, [navigate]);
 
   console.log(userType);
+
+  console.log(selected);
 
   return(
     <>
