@@ -11,7 +11,6 @@ const Trending = () => {
   </Box>);
 =======
     {/*{
-
 restaurant.map((restaurant, index) => {
   return (
       <VStack spacing="12px">
@@ -23,7 +22,6 @@ restaurant.map((restaurant, index) => {
       </VStack>
   );
 })
-
 }*/}
   </Box>); 
 >>>>>>> 60a999ec716291b7a624f3332bd6a70b0b091342
