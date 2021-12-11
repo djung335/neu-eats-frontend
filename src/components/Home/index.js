@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Center,
   Input,
@@ -7,20 +6,29 @@ import {
   Heading,
   VStack,
   HStack,
+  IconButton
 } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons";
 import PopularReviews from "./PopularReviews";
 import Trending from "./Trending";
+import React, {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 const Home = () => {
+  const [restaurantTerm, setRestaurantTerm] = useState('/');
+  
   return (
     <>
       <Center>
         <VStack>
           <Heading mt={10} fontWeight="700" fontSize="5xl">NEU Eats</Heading>
           <InputGroup>
-            <InputLeftElement children={<SearchIcon/>} />
-            <Input width="800px" placeholder="Search NEU Eats"></Input>
+            <InputLeftElement 
+            children={
+            <Link to={restaurantTerm}><IconButton aria-label='Search database' icon={<SearchIcon />}/></Link>
+            } />
+            <Input width="800px" onChange={(e) =>
+              setRestaurantTerm("/" + e.target.value)} placeholder="Search NEU Eats"></Input>
           </InputGroup>
         </VStack>
       </Center>
