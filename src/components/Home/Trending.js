@@ -7,9 +7,6 @@ import {Link} from "react-router-dom";
 const Trending = () => {
     return(<Box w="50%" p={3}>
     <Text fontWeight="700" textAlign="left">Trending</Text>
-<<<<<<< HEAD
-  </Box>);
-=======
     {/*{
 restaurant.map((restaurant, index) => {
   return (
@@ -24,7 +21,6 @@ restaurant.map((restaurant, index) => {
 })
 }*/}
   </Box>); 
->>>>>>> 60a999ec716291b7a624f3332bd6a70b0b091342
     
 };
 
