@@ -16,36 +16,36 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState();
   const getProfile = () => {
-    // fetch(`${API_URL}/profile`, {
-    //   method: 'POST',
-    //   credentials: 'include'
-    // }).then(res => res.json())
-    // .then(user => {
-    //   setUser(user);
-    // })
+    fetch(`${API_URL}/profile`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => res.json())
+    .then(user => {
+      setUser(user);
+    })
   }
 
   const getAuth = () => {
-    // fetch(`${API_URL}/auth`, {
-    //   method: 'POST',
-    //   credentials: 'include'
-    // }).then(res => res.json())
-    // .then(auth => {
-    //   setAuth(auth);
-    // })
+    fetch(`${API_URL}/auth`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => res.json())
+    .then(auth => {
+      setAuth(auth);
+    })
   }
   useEffect(getAuth, [navigate]);
 
   const logout = () => {
-    // fetch(`${API_URL}/logout`, {
-    //   method: 'POST',
-    //   credentials: 'include'
-    // }).then(res => navigate(''))
-    // .then(res => {
-    //   window.location.reload();
-    // });
+    fetch(`${API_URL}/logout`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => navigate(''))
+    .then(res => {
+      window.location.reload();
+    });
   }
 
   console.log(auth);
