@@ -5,8 +5,7 @@ import { API_URL } from "../../../consts";
 
 const RegisterForm = () => {
   const [userType, setUserType] = useState();
-  const [selected, setSelected] = useState();
-  const [user, setUser] = useState({email: '', username: '', password: '', firstName: '', lastName: '', owner: selected});
+  const [user, setUser] = useState({email: '', username: '', password: '', firstName: '', lastName: '', owner: false});
 
   const navigate = useNavigate();
   const register = () => {
@@ -33,7 +32,6 @@ const RegisterForm = () => {
 
   console.log(userType);
 
-  console.log(selected);
 
   return(
     <>
@@ -75,7 +73,7 @@ const RegisterForm = () => {
                     </Button>
                 </Box>
                 <Box display="flex" justifyContent="end">
-                    <Checkbox onChange={(e) => setSelected( e.target.checked )} color="#a2a2a2" size="sm" mt={2}> restaurant owner </Checkbox>
+                    <Checkbox value={ user.owner } onChange={(e) => setUser({...user, owner: e.target.checked})} color="#a2a2a2" size="sm" mt={2}> restaurant owner </Checkbox>
                 </Box>
         </form>
     </Box>
