@@ -2,22 +2,23 @@ import React, {useEffect, useState} from "react";
 import {Box, Button, HStack, Input, Text, VStack} from "@chakra-ui/react";
 
 import SearchItems from "./SearchItems";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 
 const Search = () => {
-
+  const navigate = useNavigate();
   const [restaurantTerm, setRestaurantTerm] = useState('');
   const [restaurant, setRestaurant] = useState([]);
 
   const findRestaurant = () => {
+    navigate(`/search/${restaurantTerm}`);
     fetch(
         `https://api.documenu.com/v2/restaurants/search/geo?cuisine=${restaurantTerm}&lat=42.358990&lon=-71.058632&distance=1&key=65ca9233213581c4962279e4e767f1ca`)
     .then(res => res.json())
     .then(results => setRestaurant(results.data))
   }
 
-  useEffect(findRestaurant, []);
+
 
   return (
       <VStack>
