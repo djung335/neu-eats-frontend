@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, InputGroup, Input, Text, Link, Button, FormControl, Heading, Checkbox } from "@chakra-ui/react";
 import { Link as ReachLink, useNavigate } from "react-router-dom"
 import { API_URL } from "../../../consts";
 
 const RegisterForm = () => {
-  const [user, setUser] = useState({email: '', username: '', password: '', firstName: '', lastName: '', owner: false});
+  const [userType, setUserType] = useState();
+  const [selected, setSelected] = useState();
+  const [user, setUser] = useState({email: '', username: '', password: '', firstName: '', lastName: '', owner: selected});
+
   const navigate = useNavigate();
   const register = () => {
     fetch(`${API_URL}/register`, {
@@ -16,6 +19,22 @@ const RegisterForm = () => {
       }
     }).then(status => navigate('/profile'));
   };
+  
+  const getUserType = () => {
+    fetch(`${API_URL}/userType`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => res.json())
+    .then(userType => {
+      setUserType(userType);
+    })
+  }
+  useEffect(getUserType, [navigate]);
+
+  console.log(userType);
+
+  console.log(selected);
+
   return(
     <>
     <Box textAlign="start" ms={2} mt={"1em"}>
@@ -56,7 +75,7 @@ const RegisterForm = () => {
                     </Button>
                 </Box>
                 <Box display="flex" justifyContent="end">
-                    <Checkbox onChange={(e) => setUser({...user, owner: e.target.isChecked})} color="#a2a2a2" size="sm" mt={2}> restaurant owner </Checkbox>
+                    <Checkbox onChange={(e) => setSelected( e.target.checked )} color="#a2a2a2" size="sm" mt={2}> restaurant owner </Checkbox>
                 </Box>
         </form>
     </Box>
