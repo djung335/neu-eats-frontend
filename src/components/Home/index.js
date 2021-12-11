@@ -28,7 +28,7 @@ const Home = () => {
             <Link to={restaurantTerm}><IconButton aria-label='Search database' icon={<SearchIcon />}/></Link>
             } />
             <Input width="800px" onChange={(e) =>
-              setRestaurantTerm("/" + e.target.value)} placeholder="Search NEU Eats"></Input>
+              setRestaurantTerm("search/" + e.target.value)} placeholder="Search NEU Eats"></Input>
           </InputGroup>
         </VStack>
       </Center>
