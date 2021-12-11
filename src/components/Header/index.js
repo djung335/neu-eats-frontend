@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState();
   const getProfile = () => {
     // fetch(`${API_URL}/profile`, {
     //   method: 'POST',
