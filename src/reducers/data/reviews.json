@@ -2,6 +2,7 @@
   {
     "_id": "123",
     "restaurant": "Boston Shawarma",
+    "userid": "10209",
     "userName": "alexas",
     "verified": false,
     "handle": "Alexa S.",
@@ -16,6 +17,7 @@
   {
     "_id": "567",
     "restaurant": "Boston Shawarma",
+    "userid": "13092",
     "userName": "dave24",
     "verified": true,
     "handle": "Dave P.",
