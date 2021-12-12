@@ -4,13 +4,20 @@ import {
   Box,
   Stack,
   Text,
+  Link as ChakraLink,
   useColorModeValue,
 } from "@chakra-ui/react";
 import StarRatingComponent from "react-star-rating-component";
 import {IoPaw} from "react-icons/all";
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {helpfulReview} from "../../../services/reviewService";
 
 const ReviewItem = ({review}) => {
+  const dispatch = useDispatch();
+  const helpfulReviewHandler = () => {
+    helpfulReview(dispatch, review);
+  }
   return(
       <>
         <Box
@@ -48,6 +55,9 @@ const ReviewItem = ({review}) => {
               {review.review}
             </Text>
           </Stack>
+          <ChakraLink onClick={helpfulReviewHandler} color={"#7986e6"}>
+            {review.stats.helpfuls} People Found this Review Helpful
+          </ChakraLink>
         </Box>
       </>
   )
