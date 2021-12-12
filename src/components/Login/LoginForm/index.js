@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Box, InputGroup, Input, InputLeftElement, Link, Button, FormControl, Heading } from "@chakra-ui/react";
-import { FaLock, FaUserAlt, AlertIcon } from "react-icons/all";
+import { FaLock, FaUserAlt } from "react-icons/all";
 import { Link as ReachLink, useNavigate } from "react-router-dom"
 import { API_URL } from "../../../consts";
 import AlertPop from "../AlertPop";
 
 const LoginForm = () => {
   const [user, setUser] = useState({});
+  // hook to keep track of error
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
@@ -53,7 +54,7 @@ const LoginForm = () => {
                     <Button onClick={ login } w="5.5em" fontSize="1.2em" p="1.1em" fontWeight="normal" bg="#7986e6" color="white" borderRadius="0.6em">
                         Log In
                     </Button>
-                    { error && <AlertPop title="You might have messed up"/>}
+                    { error && <AlertPop title="Incorrect Username or Password"/>}
                 </Box>
         </form>
     </Box>
