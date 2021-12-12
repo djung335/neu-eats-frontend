@@ -7,7 +7,7 @@ import AlertPop from "../AlertPop";
 
 const LoginForm = () => {
   const [user, setUser] = useState({});
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
 
@@ -61,7 +61,7 @@ const LoginForm = () => {
                     <Button onClick={ login } w="5.5em" fontSize="1.2em" p="1.1em" fontWeight="normal" bg="#7986e6" color="white" borderRadius="0.6em">
                         Log In
                     </Button>
-                    { setError && <AlertPop title="You might have messed up"/>}
+                    { error && <AlertPop title="You might have messed up"/>}
                 </Box>
         </form>
     </Box>
