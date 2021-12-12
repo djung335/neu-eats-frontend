@@ -20,23 +20,13 @@ const LoginForm = () => {
         'content-type': 'application/json'
       }
     }).then(res => {
-      if (res.ok) {
+      if (res.status === 200) {
         navigate('/')
       } else {
         setError(true);
       }
   })
 };
-
-
-
-
-
-
-
-
-
-
 
 
   return(
