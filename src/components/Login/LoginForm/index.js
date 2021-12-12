@@ -7,10 +7,9 @@ import AlertPop from "../AlertPop";
 
 const LoginForm = () => {
   const [user, setUser] = useState({});
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-
-  let registerError;
 
   const login = () => {
     fetch(`${API_URL}/login`, {
@@ -20,13 +19,12 @@ const LoginForm = () => {
       headers: {
         'content-type': 'application/json'
       }
-    }).then(res => {
-      if (res.status === 200) {
-        navigate('/');
-      } else {
-        registerError = <AlertPop title={res.message}/>
-      }
-    });
+    }).then(status => {
+      navigate('/')
+    }).catch((err) => {
+      setError(true);
+    })
+  }
 
 
 
@@ -63,7 +61,7 @@ const LoginForm = () => {
                     <Button onClick={ login } w="5.5em" fontSize="1.2em" p="1.1em" fontWeight="normal" bg="#7986e6" color="white" borderRadius="0.6em">
                         Log In
                     </Button>
-                    { registerError }
+                    { setError && <AlertPop title="You might have messed up"/>}
                 </Box>
         </form>
     </Box>
