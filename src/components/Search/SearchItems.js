@@ -45,7 +45,7 @@ const SearchItem = ({
               {
                 restaurant.cuisines?.map((tags) => {
                 return <Box fontSize="12" borderRadius="md" background="#7986e6"
-                            color="white" p="0.5">{tags}</Box>
+                            color="white" p="1">{tags}</Box>
               })}
             </HStack>
           </VStack>
