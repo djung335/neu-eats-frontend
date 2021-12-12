@@ -12,23 +12,6 @@ const LoginForm = () => {
 
   let registerError;
 
-  // const login = () => {
-  //   fetch(`${API_URL}/login`, {
-  //     method: 'POST',
-  //     body: JSON.stringify(user),
-  //     credentials: 'include',
-  //     headers: {
-  //       'content-type': 'application/json'
-  //     }
-  //   }).then(status => {
-  //     navigate('/')
-  //   }).catch((err) => {
-  //     console.log("I got here!");
-  //     registerError = <AlertPop title={err.response.message}/>
-  //   })
-  // }
-
-
   const login = () => {
     fetch(`${API_URL}/login`, {
       method: 'POST',
@@ -38,13 +21,15 @@ const LoginForm = () => {
         'content-type': 'application/json'
       }
     }).then(res => {
-      if (res.status === 403) {
-        registerError = <AlertPop title={res.message}/>
+      if (res.status === 200) {
+        navigate('/');
       } else {
-        navigate("/");
+        registerError = <AlertPop title={res.message}/>
       }
-    })
-  }
+    });
+
+
+
 
 
 
