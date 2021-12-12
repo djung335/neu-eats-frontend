@@ -19,12 +19,14 @@ const LoginForm = () => {
       headers: {
         'content-type': 'application/json'
       }
-    }).then(status => {
-      navigate('/')
-    }).catch((err) => {
-      setError(true);
-    })
-  }
+    }).then(res => {
+      if (res.ok) {
+        navigate('/')
+      } else {
+        setError(true);
+      }
+  })
+};
 
 
 
