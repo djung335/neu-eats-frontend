@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, InputGroup, Input, Text, Link, Button, FormControl, Heading, Checkbox } from "@chakra-ui/react";
 import { Link as ReachLink, useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form";
@@ -11,7 +11,6 @@ const RegisterForm = () => {
   // const [userType, setUserType] = useState();
   const [user, setUser] = useState({email: '', username: '', password: '', firstName: '', lastName: '', owner: false});
 
-  let registerError;
 
   const [error, setError] = useState(false);
   const onSubmit = data => console.log(data);
@@ -34,19 +33,6 @@ const RegisterForm = () => {
       }
   })
   };
-  
-  // const getUserType = () => {
-  //   fetch(`${API_URL}/userType`, {
-  //     method: 'POST',
-  //     credentials: 'include'
-  //   }).then(res => res.json())
-  //   .then(userType => {
-  //     setUserType(userType);
-  //   })
-  // }
-  // useEffect(getUserType, [navigate]);
-
-  // console.log(userType);
   
   return(
     <>
