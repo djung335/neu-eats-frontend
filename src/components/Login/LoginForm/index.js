@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, InputGroup, Input, InputLeftElement, Link, Button, FormControl, Heading } from "@chakra-ui/react";
-import { FaLock, FaUserAlt } from "react-icons/all";
+import { FaLock, FaUserAlt, AlertIcon } from "react-icons/all";
 import { Link as ReachLink, useNavigate } from "react-router-dom"
 import { API_URL } from "../../../consts";
 import AlertPop from "../AlertPop";
@@ -12,6 +12,23 @@ const LoginForm = () => {
 
   let registerError;
 
+  // const login = () => {
+  //   fetch(`${API_URL}/login`, {
+  //     method: 'POST',
+  //     body: JSON.stringify(user),
+  //     credentials: 'include',
+  //     headers: {
+  //       'content-type': 'application/json'
+  //     }
+  //   }).then(status => {
+  //     navigate('/')
+  //   }).catch((err) => {
+  //     console.log("I got here!");
+  //     registerError = <AlertPop title={err.response.message}/>
+  //   })
+  // }
+
+
   const login = () => {
     fetch(`${API_URL}/login`, {
       method: 'POST',
@@ -20,13 +37,22 @@ const LoginForm = () => {
       headers: {
         'content-type': 'application/json'
       }
-    }).then(status => {
-      navigate('/')
-    }).catch((err) => {
-      console.log("I got here!");
-      registerError = <AlertPop title={err.response.message}/>
+    }).then(res => {
+      if (res.status === 403) {
+        registerError = <AlertPop title={res.message}/>
+      } else {
+        navigate("/");
+      }
     })
   }
+
+
+
+
+
+
+
+
 
   return(
     <>
