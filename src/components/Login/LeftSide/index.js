@@ -15,7 +15,7 @@ const LeftSide = () => {
               </HStack>
             </Box>
             <Box w="full" h="90%" display="flex" alignItems="center" justifyContent="center">
-                <Text fontSize="5.3em" fontWeight="600" marginBottom="15%" marginRight="10%" lineHeight="115%" color="white"> Find good food <br /> <u>faster</u> </Text>
+                <Text fontSize={{ base: '5.3em', sm: '2.5em', md: '4em', lg: '5.3em' }} fontWeight="600" marginBottom="25%" lineHeight="115%" color="white" paddingLeft={"10px"} paddingBottom={{base: '0px', sm: '100px', md: '80px', lg: '0px'}}> Find good food <br /> <u>faster</u> </Text>
             </Box>
           </VStack>
         </Flex>

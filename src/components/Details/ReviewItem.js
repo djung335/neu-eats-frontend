@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import StarRatingComponent from "react-star-rating-component";
 import {IoPaw} from "react-icons/all";
+import {Link} from "react-router-dom";
 
 const ReviewItem = ({review}) => {
   return(
@@ -21,10 +22,12 @@ const ReviewItem = ({review}) => {
             p={6}
             overflow={'hidden'}>
           <Stack mb={2} direction={'row'} spacing={4} align={'center'}>
-            <Avatar
-                src={review.profileImage}
-                alt={'Author'}
-            />
+            <Link to={'/profile/' /*+ {review.userid}*/}>
+              <Avatar
+                  src={review.profileImage}
+                  alt={'Author'}
+              />
+            </Link>
             <Stack direction={'column'} spacing={0} fontSize={'sm'}>
               <Text fontWeight={600}>{review.handle}</Text>
               <span pos={"relative"} left={"100px"}>
