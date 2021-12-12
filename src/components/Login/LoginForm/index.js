@@ -3,10 +3,14 @@ import { Box, InputGroup, Input, InputLeftElement, Link, Button, FormControl, He
 import { FaLock, FaUserAlt } from "react-icons/all";
 import { Link as ReachLink, useNavigate } from "react-router-dom"
 import { API_URL } from "../../../consts";
+import AlertPop from "../AlertPop";
 
 const LoginForm = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
+
+  let registerError;
+
   const login = () => {
     fetch(`${API_URL}/login`, {
       method: 'POST',
@@ -17,7 +21,9 @@ const LoginForm = () => {
       }
     }).then(status => {
       navigate('/')
-    });
+    }).catch((err) => {
+      registerError = <AlertPop title={err.response.message}/>
+    })
   }
 
   return(
@@ -44,6 +50,7 @@ const LoginForm = () => {
                     <Button onClick={ login } w="5.5em" fontSize="1.2em" p="1.1em" fontWeight="normal" bg="#7986e6" color="white" borderRadius="0.6em">
                         Log In
                     </Button>
+                    { registerError }
                 </Box>
         </form>
     </Box>
