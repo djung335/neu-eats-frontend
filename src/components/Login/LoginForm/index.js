@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Box, InputGroup, Input, InputLeftElement, Link, Button, FormControl, Heading } from "@chakra-ui/react";
-import { FaLock, FaUserAlt } from "react-icons/all";
+import { Box, Alert, InputGroup, Input, InputLeftElement, Link, Button, FormControl, Heading } from "@chakra-ui/react";
+import { FaLock, FaUserAlt, AlertIcon } from "react-icons/all";
 import { Link as ReachLink, useNavigate } from "react-router-dom"
 import { API_URL } from "../../../consts";
 
 const LoginForm = () => {
   const [user, setUser] = useState({});
+  const [valid, setValid] = useState(true);
   const navigate = useNavigate();
   const login = () => {
     fetch(`${API_URL}/login`, {
@@ -22,6 +23,10 @@ const LoginForm = () => {
 
   return(
     <>
+    {!valid && <Alert status='error'>
+    <AlertIcon />
+    There was an error processing your request
+  </Alert>}
     <Box textAlign="start" mb="-0.25rem" ms={2}>
         <Heading fontSize="2em" color="#4d4c4c">Log In.</Heading>
     </Box>
