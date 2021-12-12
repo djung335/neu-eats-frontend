@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Box, Alert, InputGroup, Input, InputLeftElement, Link, Button, FormControl, Heading } from "@chakra-ui/react";
-import { FaLock, FaUserAlt, AlertIcon } from "react-icons/all";
+import { Box, InputGroup, Input, InputLeftElement, Link, Button, FormControl, Heading } from "@chakra-ui/react";
+import { FaLock, FaUserAlt } from "react-icons/all";
 import { Link as ReachLink, useNavigate } from "react-router-dom"
 import { API_URL } from "../../../consts";
 import AlertPop from "../AlertPop";
 
 const LoginForm = () => {
   const [user, setUser] = useState({});
-  const [valid, setValid] = useState(true);
   const navigate = useNavigate();
+
 
   let registerError;
 
@@ -23,16 +23,13 @@ const LoginForm = () => {
     }).then(status => {
       navigate('/')
     }).catch((err) => {
+      console.log("I got here!");
       registerError = <AlertPop title={err.response.message}/>
     })
   }
 
   return(
     <>
-    {!valid && <Alert status='error'>
-    <AlertIcon />
-    There was an error processing your request
-  </Alert>}
     <Box textAlign="start" mb="-0.25rem" ms={2}>
         <Heading fontSize="2em" color="#4d4c4c">Log In.</Heading>
     </Box>
