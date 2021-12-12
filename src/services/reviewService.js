@@ -37,7 +37,7 @@ export const deleteReview = (dispatch, review) =>
     );
 
 export const helpfulReview = (dispatch, review) =>
-    fetch(`${REVIEW_API}/${review._id}/helpful`, {
+    fetch(`${REVIEW_API}/${review._id}/helpfuls`, {
       method: "PUT",
     }).then((response) =>
         dispatch({

@@ -2,7 +2,7 @@ import {
   Heading
 } from "@chakra-ui/react";
 import React from "react";
-import reviews from "../../reducers/data/reviews.json"
+import reviews from "../../../reducers/data/reviews.json"
 import ReviewItem from "./ReviewItem";
 import WriteReviewNormal from "./WriteReviewNormal";
 

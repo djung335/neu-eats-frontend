@@ -3,7 +3,7 @@ import {
   Center,
   VStack,
 } from "@chakra-ui/react";
-import Reviews from "./ReviewsNormal";
+import ReviewsRestaurant from "./Reviews/ReviewsRestaurant";
 import RestaurantPage from "./RestaurantPage";
 
 const DetailsRestaurant = () => {
@@ -11,7 +11,7 @@ const DetailsRestaurant = () => {
       <Center>
         <VStack>
           <RestaurantPage/>
-          <Reviews/>
+          <ReviewsRestaurant/>
         </VStack>
       </Center>
   );
