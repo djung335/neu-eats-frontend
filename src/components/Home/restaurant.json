@@ -1,18 +1,78 @@
-[{
-    "price_range_num": 3,
-    "cuisines": ["french", "cafe"],
-    "restaurant_phone": "123-456-7890",
-    "restaurant_name": "Chipotle"
+[
+  {
+    "restaurant_id": 10,
+    "name": "Boston Shawarma",
+    "address": "315 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02115",
+    "rating": 4.0,
+    "reviewCount": 2,
+    "studentReview": 3,
+    "restaurantImage": "../../images/boston-shawarma-3.jpeg",
+    "restaurantDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "attributes": {
+      "HuskyDollars": true,
+      "StudentDiscount": true
+    },
+    "categories": [
+      "Halal",
+      "Middle Eastern",
+      "Mediterranean"
+    ],
+    "hours": {
+      "MondayStart": "10:00:00",
+      "MondayEnd": "23:00:00",
+      "TuesdayStart": "10:00:00",
+      "TuesdayEnd": "23:00:00",
+      "WednesdayStart": "10:00:00",
+      "WednesdayEnd": "23:00:00",
+      "ThursdayStart": "10:00:00",
+      "ThursdayEnd": "23:00:00",
+      "FridayStart": "10:00:00",
+      "FridayEnd": "23:00:00",
+      "SaturdayStart": "10:00:00",
+      "SaturdayEnd": "23:00:00",
+      "SundayStart": "10:00:00",
+      "SundayEnd": "23:00:00"
+    }
   },
   {
-    "price_range_num": 3,
-    "cuisines": ["french", "cafe"],
-    "restaurant_phone": "123-456-7890",
-    "restaurant_name": "Chipotle"
-  },
-  {
-    "price_range_num": 3,
-    "cuisines": ["french", "cafe"],
-    "restaurant_phone": "123-456-7890",
-    "restaurant_name": "Chipotle"
-  }]
+    "restaurant_id": 15,
+    "name": "International Village",
+    "address": "1155 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02115",
+    "rating": 4.5,
+    "reviewCount": 1,
+    "studentReview": 1,
+    "restaurantImage": "../../images/boston-shawarma-3.jpeg",
+    "restaurantDescription": "Award winning dining hall at Northeastern",
+    "attributes": {
+      "HuskyDollars": true,
+      "StudentDiscount": true
+    },
+    "categories": [
+      "Halal",
+      "Middle Eastern",
+      "Mediterranean"
+    ],
+    "hours": {
+      "MondayStart": "10:00:00",
+      "MondayEnd": "23:00:00",
+      "TuesdayStart": "10:00:00",
+      "TuesdayEnd": "23:00:00",
+      "WednesdayStart": "10:00:00",
+      "WednesdayEnd": "23:00:00",
+      "ThursdayStart": "10:00:00",
+      "ThursdayEnd": "23:00:00",
+      "FridayStart": "10:00:00",
+      "FridayEnd": "23:00:00",
+      "SaturdayStart": "10:00:00",
+      "SaturdayEnd": "23:00:00",
+      "SundayStart": "10:00:00",
+      "SundayEnd": "23:00:00"
+    }
+  }
+]
