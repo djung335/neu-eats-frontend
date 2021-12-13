@@ -38,11 +38,9 @@ const Profile = () => {
               onChange={(e) => setUser({...user, username: e.target.value})}
               placeholder="username"
               className="form-control"/>
-
         </Box>
         <Box w='40%'>
           <VStack>
-
             <Box
                 maxW={'270px'}
                 w={'full'}
@@ -58,19 +56,15 @@ const Profile = () => {
                     objectFit={'cover'}
                 />
               </Box>
-
               <Box p={6}>
                 <Stack spacing={0} align={'center'} mb={5}>
                   <Heading fontSize={'18px'} fontStyle={'Bold'}>
                     {user.firstName} {user.lastName}
                   </Heading>
                 </Stack>
-
                 <Text fontSize={'12px'} paddingTop={'5px'}>
                   <b>Email:</b> {user.email}
                 </Text>
-
-
               </Box>
               <Box align={'right'}>
                 <ProfileEdit/>
@@ -82,7 +76,5 @@ const Profile = () => {
 
       </Flex>
   );
-
-};
-
+}
 export default Profile;
