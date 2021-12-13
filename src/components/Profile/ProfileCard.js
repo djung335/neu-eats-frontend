@@ -34,7 +34,6 @@ const ProfileCard = () => {
 return (
     <Flex py={6} paddingLeft={'175px'}>
       <VStack>
-        {button}
         <Box
             maxW={'270px'}
             w={'full'}
