@@ -16,7 +16,7 @@ const Profile = () => {
     }).then(res => res.json())
     .then(user => {
       setUser(user);
-    });
+    }).catch(e => navigate('/login'));
 
   /*.catch(e => navigate('/login'))*/
   }
@@ -28,15 +28,20 @@ const Profile = () => {
   }
   useEffect(getProfile, [navigate]);
   return(
-      <Flex>
-        <Box w="60%" paddingLeft="100px">
-          <Text>{user.firstName} backend broken?</Text>
-        </Box>
-        <Box w="40%">
-          <Text> testing out something </Text>
-        </Box>
-      </Flex>
-
+      <div>
+        <h1>Profile</h1>
+        <input
+            value={user.username}
+            onChange={(e) => setUser({...user, username: e.target.value})}
+            placeholder="username"
+            className="form-control"/>
+        <button
+            onClick={logout}
+            className="btn btn-danger">
+          Logout
+        </button>
+       
+      </div>
   );
 
 
