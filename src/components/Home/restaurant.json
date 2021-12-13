@@ -1,0 +1,18 @@
+[{
+    "price_range_num": 3,
+    "cuisines": ["french", "cafe"],
+    "restaurant_phone": "123-456-7890",
+    "restaurant_name": "Chipotle"
+  },
+  {
+    "price_range_num": 3,
+    "cuisines": ["french", "cafe"],
+    "restaurant_phone": "123-456-7890",
+    "restaurant_name": "Chipotle"
+  },
+  {
+    "price_range_num": 3,
+    "cuisines": ["french", "cafe"],
+    "restaurant_phone": "123-456-7890",
+    "restaurant_name": "Chipotle"
+  }]
