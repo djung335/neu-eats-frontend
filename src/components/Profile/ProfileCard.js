@@ -29,11 +29,12 @@ const ProfileCard = () => {
       setUser(user);
     }).catch(e => navigate('/login'));
   }
-}
+
 
 return (
     <Flex py={6} paddingLeft={'175px'}>
       <VStack>
+
         <Box
             maxW={'270px'}
             w={'full'}
