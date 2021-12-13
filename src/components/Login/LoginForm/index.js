@@ -54,8 +54,8 @@ const LoginForm = () => {
                     <Button onClick={ login } w="5.5em" fontSize="1.2em" p="1.1em" fontWeight="normal" bg="#7986e6" color="white" borderRadius="0.6em">
                         Log In
                     </Button>
-                    { error && <AlertPop title="Incorrect Username or Password"/>}
                 </Box>
+                { error && <AlertPop title="Incorrect Username or Password"/>}
         </form>
     </Box>
     </>
