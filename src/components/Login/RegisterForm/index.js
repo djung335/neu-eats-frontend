@@ -78,8 +78,8 @@ const RegisterForm = () => {
                     <Button onClick={handleSubmit(onSubmit), registerInput} w="5.5em" fontSize="1.2em" p="1.1em" fontWeight="normal" bg="#7986e6" color="white" borderRadius="0.6em">
                         Register
                     </Button>
-                    { error && <AlertPop title="Something went wrong!"/> }
                 </Box>
+                { error && <AlertPop title="Something went wrong!"/> }
                 <Box display="flex" justifyContent="end">
                     <Checkbox value={ user.owner } onChange={(e) => setUser({...user, owner: e.target.checked})} color="#a2a2a2" size="sm" mt={2}> restaurant owner </Checkbox>
                 </Box>
