@@ -14,6 +14,7 @@ import {useEffect, useState} from "react";
 import {API_URL} from "../../consts";
 import {useNavigate} from "react-router-dom";
 import ProfileEdit from "./ProfileEdit"
+import ProfileReviews from "./ProfileReviews"
 
 const Profile = () => {
   const [user, setUser] = useState({});
@@ -31,13 +32,9 @@ const Profile = () => {
   return (
       <Flex>
         <Box w='60%'>
-          <h1>Profile</h1>
-          <h1>Reviews would go here?</h1>
-          <input
-              value={user.username}
-              onChange={(e) => setUser({...user, username: e.target.value})}
-              placeholder="username"
-              className="form-control"/>
+          <Text>{user.firstName} and {user.lastName} and {user.email}</Text>
+          
+          <ProfileReviews user={user}/>
         </Box>
         <Box w='40%'>
           <VStack>
@@ -72,8 +69,6 @@ const Profile = () => {
             </Box>
           </VStack>
         </Box>
-
-
       </Flex>
   );
 }
