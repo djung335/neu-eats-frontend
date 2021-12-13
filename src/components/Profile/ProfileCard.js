@@ -29,17 +29,6 @@ const ProfileCard = () => {
       setUser(user);
     }).catch(e => navigate('/login'));
   }
-
-  const logout = () => {
-    fetch(`${API_URL}/logout`, {
-      method: 'POST',
-      credentials: 'include'
-    }).then(res => navigate(''))
-    .then(res => {
-      window.location.reload();
-    });
-  }
-
 }
 
 return (
@@ -65,7 +54,7 @@ return (
           <Box p={6}>
             <Stack spacing={0} align={'center'} mb={5}>
               <Heading fontSize={'18px'} fontStyle={'Bold'}>
-                {user.username} {user.lastName}
+                {user.firstName} {user.lastName}
               </Heading>
             </Stack>
 
@@ -78,19 +67,6 @@ return (
           <Box align={'right'}>
             <ProfileEdit/>
           </Box>
-        </Box>
-        <Box paddingLeft={'155px'}>
-          <Button
-              mr={3}
-              colorScheme={'white'}
-              bg={'red'}
-              size={"sm"}
-              fontSize={'8px'}
-              width={'100px'}
-              onClick{logout}
-          >
-            Log out
-          </Button>
         </Box>
       </VStack>
     </Flex>
