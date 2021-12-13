@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link as ReachLink,useNavigate } from "react-router-dom";
 import dave from "../../images/dave.jpeg";
 import {
   Heading,
@@ -14,25 +15,63 @@ import {
 import ProfileEdit from "./ProfileEdit";
 
 import { API_URL } from "../../consts";
-import { useNavigate } from "react-router-dom";
+
 
 const ProfileCard = () => {
-  const [user, setUser] = useState({});
+
   const navigate = useNavigate();
+  const [user, setUser] = useState({});
+  const [auth, setAuth] = useState();
   const getProfile = () => {
     fetch(`${API_URL}/profile`, {
       method: 'POST',
       credentials: 'include'
     }).then(res => res.json())
-      .then(user => {
-        setUser(user);
-    }).catch(e => navigate('/login'));
+    .then(user => {
+      setUser(user);
+    })
   }
-  useEffect(getProfile, [navigate]);
+
+  const getAuth = () => {
+    fetch(`${API_URL}/auth`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => res.json())
+    .then(auth => {
+      setAuth(auth);
+    })
+  }
+  useEffect(getAuth, [navigate]);
+
+  const logout = () => {
+    fetch(`${API_URL}/logout`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => navigate(''))
+    .then(res => {
+      window.location.reload();
+    });
+  }
+  let button;
+  let register;
+  if (typeof(auth) == "boolean") {
+    button = <Button m={3} onClick={ logout }>
+      Logout
+    </Button>
+    register = <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/profile">Profile</ReachLink></Button>
+  }
+  else {
+    button = <Button m={3}>
+      <ReachLink to="/login">Login</ReachLink>
+    </Button>
+    register = <Button mr={3} bg="#7986e6" color="white"><ReachLink to="/profile">Register</ReachLink></Button>
+  }
+
 
   return (
       <Flex py={6} paddingLeft={'175px'}>
         <VStack>
+          {button}
           <Box
               maxW={'270px'}
               w={'full'}
@@ -55,7 +94,7 @@ const ProfileCard = () => {
                 {user.username}
                 </Heading>
                 <Heading fontSize={'14px'} fontStyle={'Bold'}>Owner
-                  of {user.restName}</Heading>
+                  of {user.firstName}</Heading>
 
               </Stack>
               {/*{(!user.user && !user.owner) &&
