@@ -7,7 +7,5 @@
 | Database   | MongoDB        |
 | Styling   | Chakra UI        |
 | URL Routing   | React Router        |
-| Styling   | Chakra UI        |
-
 
 
