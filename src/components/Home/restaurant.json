@@ -3,7 +3,7 @@
     "restaurant_id": 10,
     "restuarant_name": "Boston Shawarma",
     "restaurant_phone": "123-456-7422",
-    "address.formatted": "315 Huntington Ave",
+    "address": {"formatted": "315 Huntington Ave"},
     "city": "Boston",
     "state": "MA",
     "zip": "02115",
