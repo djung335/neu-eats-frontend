@@ -12,7 +12,6 @@ const Search = () => {
   const [restaurant, setRestaurant] = useState([]);
 
   const findRestaurant = () => {
-
     fetch(
         `https://api.documenu.com/v2/restaurants/search/geo?cuisine=${params.restaurantTerm}&lat=42.358990&lon=-71.058632&distance=1&key=65ca9233213581c4962279e4e767f1ca`)
     .then(res => res.json())

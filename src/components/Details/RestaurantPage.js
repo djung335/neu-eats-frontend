@@ -14,13 +14,13 @@ import {useParams} from "react-router-dom";
 
 const RestaurantPage = () => {
   const params = useParams();
-  const [restaurant, setRestaurant] = useState('');
+  const [restaurant, setRestaurantDetails] = useState([]);
 
   const findRestaurantByID = () => {
     fetch(
         `https://api.documenu.com/v2/restaurant/${params.id}?key=65ca9233213581c4962279e4e767f1ca`)
     .then(res => res.json())
-    .then(restaurant => setRestaurant(restaurant))
+    .then(restaurant => setRestaurantDetails(restaurant));
   }
 
   useEffect(findRestaurantByID, []);
@@ -47,11 +47,11 @@ const RestaurantPage = () => {
                     starColor={"#7986e6"}
                     emptyStarColor={"#b0b0b0"}
                     renderStarIcon={() => <IoPaw size={'1.5em'}/>}
-                    value={restaurant.rating}
+                    value={4}
                 />
-                <Text color={"white"}>{restaurant.reviewCount} Reviews</Text>
               </HStack>
               <Text fontWeight={"bold"}>{restaurant.hours}</Text>
+              <Text fontWeight={"bold"}>{restaurant.restaurant_phone}</Text>
               <HStack>
                 <CheckIcon color={"red"}/>
                 <Text color={"white"}>husky dollars</Text>
