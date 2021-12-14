@@ -1,7 +1,7 @@
 [
   {
     "restaurant_id": 10,
-    "restuarant_name": "Boston Shawarma",
+    "restaurant_name": "Boston Shawarma",
     "restaurant_phone": "123-456-7422",
     "address": {"formatted": "315 Huntington Ave"},
     "city": "Boston",
@@ -22,6 +22,59 @@
       "Mediterranean"
     ],
     "price_range_num": 4,
-    "hours": 4
-  }]
+    "hours": "24/7"
+  },
+
+  {
+    "restaurant_id": 10,
+    "restaurant_name": "Ichiban",
+    "restaurant_phone": "123-456-7422",
+    "address": {"formatted": "315 Huntington Ave"},
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02115",
+    "rating": 4.0,
+    "reviewCount": 2,
+    "studentReview": 3,
+    "restaurantImage": "../../images/boston-shawarma-3.jpeg",
+    "restaurantDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "attributes": {
+      "HuskyDollars": true,
+      "StudentDiscount": true
+    },
+    "cuisines": [
+      "Halal",
+      "Middle Eastern",
+      "Mediterranean"
+    ],
+    "price_range_num": 4,
+    "hours": "24/7"
+  },
+  {
+    "restaurant_id": 10,
+    "restaurant_name": "Playa Bowls",
+    "restaurant_phone": "123-456-7422",
+    "address": {"formatted": "315 Huntington Ave"},
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02115",
+    "rating": 4.0,
+    "reviewCount": 2,
+    "studentReview": 3,
+    "restaurantImage": "../../images/boston-shawarma-3.jpeg",
+    "restaurantDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "attributes": {
+      "HuskyDollars": true,
+      "StudentDiscount": true
+    },
+    "cuisines": [
+      "Halal",
+      "Middle Eastern",
+      "Mediterranean"
+    ],
+    "price_range_num": 4,
+    "hours": "24/7"
+  }
+
+]
   
