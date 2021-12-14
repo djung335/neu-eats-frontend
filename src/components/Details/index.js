@@ -42,7 +42,8 @@ const Details = () => {
         <Center>
           <VStack>
             <RestaurantPage/>
-            {reviews}
+            <ReviewsRestaurant/>
+            {/*reviews*/}
           </VStack>
         </Center>
       </Provider>
