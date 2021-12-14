@@ -27,9 +27,9 @@
 
   {
     "restaurant_id": 10,
-    "restaurant_name": "Ichiban",
-    "restaurant_phone": "123-456-7422",
-    "address": {"formatted": "315 Huntington Ave"},
+    "restaurant_name": "Ichiban Yakitori Sushi House",
+    "restaurant_phone": "617-236-7907",
+    "address": {"formatted": "14 Westland Ave"},
     "city": "Boston",
     "state": "MA",
     "zip": "02115",
@@ -43,18 +43,16 @@
       "StudentDiscount": true
     },
     "cuisines": [
-      "Halal",
-      "Middle Eastern",
-      "Mediterranean"
+      "Japanese"
     ],
-    "price_range_num": 4,
-    "hours": "24/7"
+    "price_range_num": 3.5,
+    "hours": "Open - Closes 10PM"
   },
   {
     "restaurant_id": 10,
-    "restaurant_name": "Playa Bowls",
-    "restaurant_phone": "123-456-7422",
-    "address": {"formatted": "315 Huntington Ave"},
+    "restaurant_name": "Pho Basil",
+    "restaurant_phone": "617-262-5377",
+    "address": {"formatted": "177 Massachusetts Ave"},
     "city": "Boston",
     "state": "MA",
     "zip": "02115",
@@ -68,12 +66,10 @@
       "StudentDiscount": true
     },
     "cuisines": [
-      "Halal",
-      "Middle Eastern",
-      "Mediterranean"
+      "Vietnamese"
     ],
-    "price_range_num": 4,
-    "hours": "24/7"
+    "price_range_num": 3,
+    "hours": "Open - Closes 10PM"
   }
 
 ]

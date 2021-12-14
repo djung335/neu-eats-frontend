@@ -13,11 +13,11 @@ const Trending = () => {
                 return (
                     <Box key={restaurant.restaurant_id}>
                       <Link to={`/details/${restaurant.restaurant_id}`}>
-                        <VStack spacing="12px">
+                        {/* <VStack spacing="12px"> */}
                           <Box/>
                           <SearchItems restaurant={restaurant}
                                        index={index + 1}/>
-                        </VStack>
+                        {/* </VStack> */}
                       </Link>
                     </Box>
                 );
