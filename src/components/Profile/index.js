@@ -1,93 +1,45 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
-  Box,
-  Flex,
-  Text,
+  Center,
   VStack,
-  HStack,
-  Image,
-  Stack,
-  Heading,
-  useColorModeValue
 } from "@chakra-ui/react";
-import dave from "../../images/dave.jpeg";
-import {useEffect, useState} from "react";
+
+import {useNavigate} from "react-router-dom";
 import {API_URL} from "../../consts";
-import {useNavigate, useParams} from "react-router-dom";
-import ProfileEdit from "./ProfileEdit"
-import ProfileReviews from "./ProfileReviews"
+import {Provider} from "react-redux";
+import {createStore} from "redux";
+import reviews from "../../reducers/reviews";
+import ProfileMember from "./ProfileMember";
+import ProfileAnon from "./ProfileAnon";
+
+const store = createStore(reviews);
 
 const Profile = () => {
-  const params = useParams();
-  const [user, setUser] = useState('');
   const navigate = useNavigate();
-  const getProfile = () => {
-    fetch(`${API_URL}/profile?id=${params.id}`, {
+  const [auth, setAuth] = useState({});
+
+  const getAuth = () => {
+    fetch(`${API_URL}/auth`, {
       method: 'POST',
       credentials: 'include'
     }).then(res => res.json())
-    .then(user => {
-      setUser(user);
-    }).catch(e => navigate('/login'));
+    .then(auth => {
+      setAuth(auth);
+    })
   }
+  useEffect(getAuth, [navigate]);
 
-  useEffect(getProfile, [navigate]);
-
+  let prof;
+  if (typeof (auth) == "boolean") {
+    prof = <ProfileMember/>
+  } else {
+    prof = <ProfileAnon/>
+  }
   return (
-      <Flex>
-        <HStack>
-          <Box w='60%'>
-            <VStack align={'left'}>
-              <Heading>{user.firstName} {user.lastName}'s Reviews</Heading>
-              <ProfileReviews user={user}/>
-            </VStack>
-          </Box>
-          <Box w='40%'>
-            <VStack>
-              <Box
-                  maxW={'270px'}
-                  w={'full'}
-                  bg={useColorModeValue('white', 'gray.800')}
-                  boxShadow={'2xl'}
-                  rounded={'md'}
-                  overflow={'hidden'}>
-                <Box padding={'10px'}>
-                  <Image
-                      h={'75%'}
-                      w={'full'}
-                      src={dave}
-                      objectFit={'cover'}
-                  />
-                </Box>
-                <Box p={6}>
-                  <Stack spacing={0} align={'center'} mb={5}>
-                    <VStack>
-
-                      {user.owner && <Heading fontSize={'18px'}
-                                              fontStyle={'Bold'}>
-                        {user.firstName} {user.lastName} (Owner)
-                      </Heading>}
-                      {!user.owner && <Heading fontSize={'18px'}
-                                               fontStyle={'Bold'}>
-                        {user.firstName} {user.lastName}
-                      </Heading>}
-                      <Text fontSize={'12px'} paddingTop={'5px'}>
-                        <b>Username:</b> {user.username}
-                      </Text>
-                      <Text fontSize={'12px'} paddingTop={'5px'}>
-                        <b>Email:</b> {user.email}
-                      </Text>
-                    </VStack>
-                  </Stack>
-                </Box>
-                <Box align={'right'}>
-                  <ProfileEdit/>
-                </Box>
-              </Box>
-            </VStack>
-          </Box>
-        </HStack>
-      </Flex>
+      <Provider store={store}>
+        {prof}
+      </Provider>
   );
-}
+};
+
 export default Profile;
