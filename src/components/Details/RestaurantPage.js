@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
 import {
+  Box,
   Flex,
   Heading,
   HStack,
-  Spacer,
+  Spacer, Spinner,
   Text,
   VStack
 } from "@chakra-ui/react";
@@ -14,16 +15,24 @@ import {useParams} from "react-router-dom";
 
 const RestaurantPage = () => {
   const params = useParams();
-  const [restaurant, setRestaurantDetails] = useState([]);
+  const [loading, setLoading] = React.useState(true);
+  const [restaurant, setRestaurant] = useState([]);
 
   const findRestaurantByID = () => {
+    setLoading(true);
     fetch(
         `https://api.documenu.com/v2/restaurant/${params.id}?key=65ca9233213581c4962279e4e767f1ca`)
     .then(res => res.json())
-    .then(restaurant => setRestaurantDetails(restaurant));
+    .then((restaurant) => {
+      setRestaurant(restaurant.result);
+      setLoading(false);
+    });
   }
 
   useEffect(findRestaurantByID, []);
+  if (loading) {
+    return <Spinner/>;
+  }
   return(
       <>
         <Flex
@@ -50,8 +59,8 @@ const RestaurantPage = () => {
                     value={4}
                 />
               </HStack>
-              <Text fontWeight={"bold"}>{restaurant.hours}</Text>
-              <Text fontWeight={"bold"}>{restaurant.restaurant_phone}</Text>
+              <Text color={"white"} fontWeight={"bold"}>{restaurant.hours.localeCompare("") === 0 ? "Hours Not Available" : restaurant.hours}</Text>
+              <Text color={"white"} fontWeight={"bold"}>{restaurant.price_range}</Text>
               <HStack>
                 <CheckIcon color={"red"}/>
                 <Text color={"white"}>husky dollars</Text>
@@ -62,6 +71,17 @@ const RestaurantPage = () => {
           </HStack>
           <Spacer/>
         </Flex>
+        <>
+          <Heading size={'lg'}>Additional Information</Heading>
+          <Text>Phone Number: {restaurant.restaurant_phone}</Text>
+          <Text>Address: {restaurant.address.formatted}</Text>
+          <Text>Restaurant Website: {restaurant.restaurant_website.localeCompare("") === 0 ? "Website Not Available" : restaurant.restaurant_website}</Text>
+          <Text>Owner: No Owner Associated With Establishment</Text>
+          <HStack>{restaurant.cuisines.map(cuisine => {
+            return(<Box fontSize="12" borderRadius="md" background="#7986e6"
+                        color="white" p="1">{cuisine}</Box>);
+          })}</HStack>
+        </>
       </>
   )
 }

@@ -22,7 +22,7 @@ const App = () => {
           window.location.pathname !== "/login" ? <Header/>:null && window.location.pathname !== "/login" ? <Divider/>:null
           } */}
           <Routes>
-            <Route path="/" element={<Header/>} >
+            <Route path="/" element={<Header/>}>
             <Route path="" element={<Home/>} />
               <Route path="home" element={<Home/>} />
               <Route path="privacy" element={<PrivacyPolicy/>} />

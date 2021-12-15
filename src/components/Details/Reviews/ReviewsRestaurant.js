@@ -13,7 +13,6 @@ const ReviewsRestaurant = (restaurant) => {
   return(
       <>
         <Heading size={'lg'}>Reviews</Heading>
-        <WriteReviewNormal/>
         {
           reviews.map(review => {
             return(
