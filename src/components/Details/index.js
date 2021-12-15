@@ -30,11 +30,26 @@ const Details = () => {
   }
   useEffect(getAuth, [navigate]);
 
-  let reviews;
-  if (typeof(auth) == "boolean") {
-    reviews = <ReviewsNormal/>
+  const [owner, setOwner] = useState({});
+  const getOwner = () => {
+    fetch(`${API_URL}/userType`, {
+      method: 'POST',
+      credentials: 'include'
+    })
+    .then(res => res.json())
+    .then(owner => {
+      setOwner(owner)
+    })
   }
-  else {
+
+  useEffect(getOwner, [navigate]);
+
+  let reviews;
+  if (typeof(auth) == "boolean" && typeof(owner) == "boolean") {
+    reviews = <ReviewsRestaurant/>
+  } else if (typeof(auth) == "boolean") {
+    reviews = <ReviewsNormal/>
+  } else {
     reviews = <ReviewsGuest/>
   }
   return(
@@ -42,8 +57,7 @@ const Details = () => {
         <Center>
           <VStack>
             <RestaurantPage/>
-            <ReviewsRestaurant/>
-            {/*reviews*/}
+            {reviews}
           </VStack>
         </Center>
       </Provider>
