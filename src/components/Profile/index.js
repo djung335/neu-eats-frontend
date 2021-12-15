@@ -35,7 +35,7 @@ const Profile = () => {
       <Flex>
         <Box w='60%'>
 
-          <Heading>{user.firstName} {user.lastName} Reviews</Heading>
+          <Heading>{user.firstName} {user.lastName}'s Reviews</Heading>
           <ProfileReviews user={user}/>
         </Box>
         <Box w='40%'>
