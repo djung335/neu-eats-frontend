@@ -35,7 +35,7 @@ const Profile = () => {
       <Flex>
         <Box w='60%'>
 
-         <Heading>{user.firstName} {user.lastName} Reviews</Heading>
+          <Heading>{user.firstName} {user.lastName} Reviews</Heading>
           <ProfileReviews user={user}/>
         </Box>
         <Box w='40%'>
@@ -57,9 +57,14 @@ const Profile = () => {
               </Box>
               <Box p={6}>
                 <Stack spacing={0} align={'center'} mb={5}>
-                  <Heading fontSize={'18px'} fontStyle={'Bold'}>
-                    {user.firstName} {user.lastName}
-                  </Heading>
+                  <VStack>
+                    <Heading fontSize={'18px'} fontStyle={'Bold'}>
+                      {user.firstName} {user.lastName}
+                    </Heading>
+                    <Text fontSize={'12px'} paddingTop={'5px'}>
+                      <b>Username:</b> {user.username}
+                    </Text>
+                  </VStack>
                 </Stack>
                 <Text fontSize={'12px'} paddingTop={'5px'}>
                   <b>Email:</b> {user.email}
