@@ -32,6 +32,12 @@ const Profile = () => {
   return (
       <Flex>
         <Box w='60%'>
+   
+     <input
+        value={user.username}
+        onChange={(e) => setUser({...user, username: e.target.value})}
+        placeholder="username"
+        className="form-control"/>
 
          <Heading>{user.firstName} {user.lastName} Reviews</Heading>
           <ProfileReviews user={user}/>
