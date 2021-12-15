@@ -50,15 +50,15 @@ const WriteReview = () => {
                   boxShadow={'sm'}
                   p={6}
                   my={12}>
-                <Heading lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl' }}>
+                <Heading lineHeight={1.1} fontSize={{base: '2xl', sm: '3xl'}}>
                   User Profile Edit
                 </Heading>
 
-                <FormControl id="Bio">
-                  <FormLabel>Bio</FormLabel>
+                <FormControl id="Username">
+                  <FormLabel>Username</FormLabel>
                   <Input
                       placeholder="Bio"
-                      _placeholder={{ color: 'gray.500' }}
+                      _placeholder={{color: 'gray.500'}}
                       type="text"
                   />
                 </FormControl>
@@ -66,16 +66,8 @@ const WriteReview = () => {
                   <FormLabel>Email address</FormLabel>
                   <Input
                       placeholder="your-email@example.com"
-                      _placeholder={{ color: 'gray.500' }}
+                      _placeholder={{color: 'gray.500'}}
                       type="email"
-                  />
-                </FormControl>
-                <FormControl id="phoneNumber">
-                  <FormLabel>Phone Number</FormLabel>
-                  <Input
-                      placeholder="(123)-456-7890"
-                      _placeholder={{ color: 'gray.500' }}
-                      type="phoneNumber"
                   />
                 </FormControl>
                 <Stack spacing={6} direction={['column', 'row']}>
