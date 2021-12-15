@@ -17,9 +17,8 @@ import ProfileEdit from "./ProfileEdit"
 import ProfileReviews from "./ProfileReviews"
 
 const Profile = () => {
-   const navigate = useNavigate();
   const [user, setUser] = useState({});
-  const [auth, setAuth] = useState();
+  const navigate = useNavigate();
   const getProfile = () => {
     fetch(`${API_URL}/profile`, {
       method: 'POST',
@@ -27,25 +26,15 @@ const Profile = () => {
     }).then(res => res.json())
     .then(user => {
       setUser(user);
-    })
+    }).catch(e => navigate('/login'));
   }
 
-  const getAuth = () => {
-    fetch(`${API_URL}/auth`, {
-      method: 'POST',
-      credentials: 'include'
-    }).then(res => res.json())
-    .then(auth => {
-      setAuth(auth);
-    })
-  }
-  useEffect(getAuth, [navigate]);
   useEffect(getProfile, [navigate]);
-  }
 
   return (
       <Flex>
         <Box w='60%'>
+
          <Heading>{user.firstName} {user.lastName} Reviews</Heading>
           <ProfileReviews user={user}/>
         </Box>
