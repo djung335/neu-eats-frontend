@@ -17,10 +17,11 @@ import ProfileEdit from "./ProfileEdit"
 import ProfileReviews from "./ProfileReviews"
 
 const Profile = () => {
-  const [user, setUser] = useState({});
+  const params = useParams();
+  const [user, setUser] = useState('');
   const navigate = useNavigate();
   const getProfile = () => {
-    fetch(`${API_URL}/profile`, {
+    fetch(`${API_URL}/profile?id=${params.id}`, {
       method: 'POST',
       credentials: 'include'
     }).then(res => res.json())
