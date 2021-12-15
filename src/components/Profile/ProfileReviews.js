@@ -7,7 +7,7 @@ import React from "react";
 
 
 import ProfileReviewItem from "./ProfileReviewItem";
-import reviews from "../../reducers/data/reviews.json";
+import reviews from "./reviews.json";
 
 const ProfileReviews = ({user = {name: "Dave peters",
   user: true,
