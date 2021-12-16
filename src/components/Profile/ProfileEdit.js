@@ -10,10 +10,44 @@ import {
   Stack,
   useColorModeValue,
 } from '@chakra-ui/react';
-import React from "react";
+import {useEffect, useState} from "react";
+import {API_URL} from "../../consts";
+import {useNavigate, useParams} from "react-router-dom";
 
-const WriteReview = () => {
+const ProfileEdit = () => {
+  const params = useParams();
+  const [user, setUser] = useState('');
+  user.id = params.id
+  const navigate = useNavigate();
+
+  const getProfile = () => {
+    fetch(`${API_URL}/profile?id=${params.id}`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => res.json())
+    .then(user => {
+      setUser(user);
+    }).catch(e => navigate('/login'));
+  }
+  useEffect(getProfile, [navigate]);
+
   const {isOpen, onOpen, onClose} = useDisclosure()
+  
+  // Had issues connecting the backend to the netlify, this 
+  // was workign previously on local but was not able to get it 
+  // working on netlify. Spoke to Sajag during office hours regarding this issue.
+
+  const updateUsername = () =>
+      fetch(`${API_URL}/users`, {
+        method: 'PUT',
+        body: JSON.stringify(user),
+        credentials: 'include',
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then(window.location.reload());
+
 
   return (
       <>
@@ -45,16 +79,20 @@ const WriteReview = () => {
                   p={6}
                   my={12}>
                 <Heading lineHeight={1.1} fontSize={{base: '2xl', sm: '3xl'}}>
-                  Edit Profile
+                  User Profile Edit
                 </Heading>
+
                 <FormControl id="Username">
                   <FormLabel>Username</FormLabel>
                   <Input
+                      value ={user.username}
                       placeholder="username"
                       _placeholder={{color: 'gray.500'}}
-                      type="text"
+                      type="email"
+                      onChange={(e) => setUser({...user, username: e.target.value})}
                   />
                 </FormControl>
+
                 <Stack spacing={6} direction={['column', 'row']}>
                   <Button
                       bg={'red.400'}
@@ -73,10 +111,9 @@ const WriteReview = () => {
                       _hover={{
                         bg: 'blue.500',
                       }}
-                      onClick={onClose}>
+                      onClick={updateUsername}>
                     Submit Username
                   </Button>
- 
                 </Stack>
               </Stack>
             </Flex>
@@ -86,4 +123,4 @@ const WriteReview = () => {
   )
 }
 
-export default WriteReview;
+export default ProfileEdit;
