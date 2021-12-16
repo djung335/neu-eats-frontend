@@ -6,7 +6,7 @@ import PopularReviewItem from "./PopularReviewItem";
 const PopularReviews = () => {
     return(     
     <Box w="50%" p={3}>
-      <Text fontWeight="700" textAlign="left">Popular Reviews</Text>
+      <Text md={5} fontWeight="700" textAlign="left">Popular Reviews</Text>
       <Wrap spacing='25px'>
         {
           reviews.map((review) => <PopularReviewItem review={review} />)
