@@ -71,7 +71,6 @@ const RestaurantPage = () => {
           </HStack>
           <Spacer/>
         </Flex>
-        <>
           <Heading size={'lg'}>Additional Information</Heading>
           <Text>Phone Number: {restaurant.restaurant_phone}</Text>
           <Text>Address: {restaurant.address.formatted}</Text>
@@ -81,7 +80,6 @@ const RestaurantPage = () => {
             return(<Box fontSize="12" borderRadius="md" background="#7986e6"
                         color="white" p="1">{cuisine}</Box>);
           })}</HStack>
-        </>
       </>
   )
 }

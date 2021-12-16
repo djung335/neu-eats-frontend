@@ -22,7 +22,7 @@ const ReviewItem = ({review}) => {
       <>
         <Box
             borderWidth="1px"
-            maxW="95%"
+            maxW="900px"
             bg={useColorModeValue('white', 'gray.900')}
             boxShadow={'2xl'}
             rounded={'md'}

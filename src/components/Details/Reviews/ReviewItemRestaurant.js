@@ -21,12 +21,13 @@ const ReviewItemRestaurant = ({review}) => {
       <>
         <Box
             borderWidth="1px"
-            maxW="95%"
+            maxW="98%"
             bg={useColorModeValue('white', 'gray.900')}
             boxShadow={'2xl'}
             rounded={'md'}
             p={6}
-            overflow={'hidden'}>
+            overflow={'hidden'}
+        >
           <Stack mb={2} direction={'row'} spacing={4} align={'center'}>
             <Link to={'/profile/' /*+ {review.userid}*/}>
               <Avatar

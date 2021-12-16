@@ -55,7 +55,7 @@ const Details = () => {
   return(
       <Provider store={store}>
         <Center>
-          <VStack>
+          <VStack flexGrow={1}>
             <RestaurantPage/>
             {reviews}
           </VStack>
