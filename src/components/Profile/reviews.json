@@ -6,7 +6,7 @@
     "userName": "alexas",
     "verified": false,
     "handle": "Daniel K.",
-    "review": "The meal I had wasn't too bad. Only complaint I have is that they didn't give enough sauce. Come early because this place gets packed!",
+    "review": "Get the Husky Meal Special!",
     "time": "December 1, 2021",
     "profileImage": "../../images/alexa.jpeg",
     "stats": {
@@ -16,12 +16,72 @@
   },
   {
     "_id": "567",
-    "restaurant": "Boston Shawarma",
+    "restaurant": "Popeyes",
     "userid": "13092",
-    "userName": "dave24",
+    "userName": "dkim",
     "verified": true,
     "handle": "Daniel K.",
-    "review": "Amazing food and even better service! Hope to come back here soon with a few of my friends. They have a nice buy one get one free deal as well.",
+    "review": "The food is good, but the staff is very mean :(",
+    "time": "November 30, 2021",
+    "profileImage": "../../images/dave.jpeg",
+    "stats": {
+      "rating": 5.0,
+      "helpfuls": 0
+    }
+  },
+  {
+    "_id": "111",
+    "restaurant": "UBurger",
+    "userid": "13092",
+    "userName": "dkim",
+    "verified": true,
+    "handle": "Daniel K.",
+    "review": "The fries are the best part about this place.",
+    "time": "November 30, 2021",
+    "profileImage": "../../images/dave.jpeg",
+    "stats": {
+      "rating": 5.0,
+      "helpfuls": 0
+    }
+  },
+  {
+    "_id": "222",
+    "restaurant": "Spring Shabu",
+    "userid": "13092",
+    "userName": "dkim",
+    "verified": true,
+    "handle": "Daniel K.",
+    "review": "Really tasty! All the vegetables are free.",
+    "time": "November 30, 2021",
+    "profileImage": "../../images/dave.jpeg",
+    "stats": {
+      "rating": 5.0,
+      "helpfuls": 0
+    }
+  },
+  {
+    "_id": "321",
+    "restaurant": "Poke Station",
+    "userid": "13092",
+    "userName": "dkim",
+    "verified": true,
+    "handle": "Daniel K.",
+    "review": "I came here expecting a pokemon store, but the food here isn't bad either...",
+    "time": "November 30, 2021",
+    "profileImage": "../../images/dave.jpeg",
+    "stats": {
+      "rating": 5.0,
+      "helpfuls": 0
+    }
+  },
+  {
+    "_id": "321",
+    "restaurant": "Stetson East",
+    "userid": "13092",
+    "userName": "dkim",
+    "verified": true,
+    "handle": "Daniel K.",
+    "review": "Hot take but this place is as good as International Village, the pizza is phenomenal.",
     "time": "November 30, 2021",
     "profileImage": "../../images/dave.jpeg",
     "stats": {
@@ -29,4 +89,5 @@
       "helpfuls": 0
     }
   }
+  
 ]
