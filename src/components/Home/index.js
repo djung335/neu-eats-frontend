@@ -4,7 +4,7 @@ import {
   InputGroup,
   Heading,
   VStack,
-  HStack,
+  Stack,
   IconButton, InputRightElement
 } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons";
@@ -48,10 +48,10 @@ const Home = () => {
           </InputGroup>
         </VStack>
       </Center>
-      {/* <HStack mt="12"> */}
+      <Stack direction={['column', 'row']} mt="12">
         <Trending/>
         <PopularReviews/>
-     {/* </HStack> */}
+     </Stack>
      </>
   );
 
