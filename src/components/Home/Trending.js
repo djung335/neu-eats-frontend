@@ -21,6 +21,16 @@ const Trending = () => {
     })
   }
   useEffect(getAuth, [navigate]);
+
+
+
+
+
+
+
+
+
+
   if (typeof(auth) == "boolean") {
     return(<Box w="50%" p={3}>
     <Text md={5} fontWeight="700" textAlign="left">Favorite Restaurants</Text>

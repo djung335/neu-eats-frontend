@@ -1,0 +1,23 @@
+[
+  {"review": "The best freshman dining hall, hands down.",
+  "restaurant": "International Village",
+  "reviewer": "Dan K.",
+  "profile" : "../../images/dave.jpeg"}, 
+
+  {"review": "I live here and the food here is consistently great!",
+  "restaurant": "International Village",
+  "reviewer": "Alina C.",
+  "profile" : "../../images/dave.jpeg"},
+
+  {"review": "IV? is that for the IV I'll need in the hospital after I eat the terrible food here?",
+  "restaurant": "International Village",
+  "reviewer": "Daniel J.",
+  "profile" : "../../images/dave.jpeg"},
+
+  {"review": "On par with Stetson East!",
+  "restaurant": "International Village",
+  "reviewer": "Nhat N.",
+  "profile" : "../../images/dave.jpeg"}
+
+
+]
