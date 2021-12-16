@@ -1,4 +1,5 @@
-import React, {useState, useNavigate, useEffect} from "react";
+import React, {useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import {Box, Text, VStack} from "@chakra-ui/react";
 import restaurant from "./restaurant.json"
 import restaurant2 from "./restaurant2.json"

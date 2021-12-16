@@ -1,4 +1,5 @@
-import React, {useState, useNavigate, useEffect} from "react";
+import React, {useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import {Box, Text, Wrap} from "@chakra-ui/react";
 import reviews from "./reviews.json";
 import reviews2 from "./reviews2.json";
