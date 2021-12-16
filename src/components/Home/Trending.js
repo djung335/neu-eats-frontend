@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Text, VStack} from "@chakra-ui/react";
+import {Box, Spacer, Text, VStack} from "@chakra-ui/react";
 import restaurant from "./restaurant.json"
 import SearchItems from "../Search/SearchItems";
 import {Link} from "react-router-dom";

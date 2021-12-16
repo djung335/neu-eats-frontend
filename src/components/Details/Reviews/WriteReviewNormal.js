@@ -14,7 +14,7 @@ import {postNewReview} from "../../../services/reviewService";
 
 const WriteReviewNormal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  let [writeReview, setWriteReview] = useState('');
+  const [writeReview, setWriteReview] = useState('');
   const dispatch = useDispatch();
   const reviewClickHandler = () => {
     postNewReview(dispatch, {

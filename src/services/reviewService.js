@@ -16,6 +16,7 @@ export const postNewReview = (dispatch, newReview) =>
       body: JSON.stringify(newReview),
       headers: {
         "content-type": "application/json",
+        "accept": 'application/json'
       },
     })
     .then((response) => response.json())
