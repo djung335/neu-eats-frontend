@@ -17,6 +17,12 @@ const WriteReviewNormal = () => {
   let [newReview, setReview] = useState('');
   const dispatch = useDispatch();
   const reviewClickHandler = () => {
+    /*
+    * Note: posting a new review doesn't fully work because of a CORS issue since
+    * access control origin is missing and a 503 error that occurs whenever we try to fetch.
+    * If we had more time, we could fix this problem
+    * by updating the post request to avoid this issue.
+    * */
     postNewReview(dispatch, {
       review: newReview
     });
