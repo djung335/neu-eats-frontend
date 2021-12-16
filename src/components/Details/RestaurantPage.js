@@ -21,7 +21,7 @@ const RestaurantPage = () => {
   const findRestaurantByID = () => {
     setLoading(true);
     fetch(
-        `https://api.documenu.com/v2/restaurant/${params.id}?key=65ca9233213581c4962279e4e767f1ca`)
+        `https://api.documenu.com/v2/restaurant/${params.id}?key=e7222ddb02556e2f6219b22c91465537`)
     .then(res => res.json())
     .then((restaurant) => {
       setRestaurant(restaurant.result);
