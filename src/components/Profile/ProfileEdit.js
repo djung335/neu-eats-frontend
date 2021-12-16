@@ -10,16 +10,40 @@ import {
   Stack,
   useColorModeValue,
 } from '@chakra-ui/react';
-import React from "react";
+import {useEffect, useState} from "react";
+import {API_URL} from "../../consts";
+import {useNavigate, useParams} from "react-router-dom";
 
-const WriteReview = () => {
+const ProfileEdit = () => {
+  const params = useParams();
+  const [user, setUser] = useState('');
+  user.id = params.id
+  const navigate = useNavigate();
+
+  const getProfile = () => {
+    fetch(`${API_URL}/profile?id=${params.id}`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => res.json())
+    .then(user => {
+      setUser(user);
+    }).catch(e => navigate('/login'));
+  }
+  useEffect(getProfile, [navigate]);
+
   const {isOpen, onOpen, onClose} = useDisclosure()
-  /*let [value, setValue] = React.useState("")
 
-  let handleInputChange = (e) => {
-    let inputValue = e.target.value
-    setValue(inputValue)
-  }*/
+  const updateUsername = () =>
+      fetch(`${API_URL}/users`, {
+        method: 'PUT',
+        body: JSON.stringify(user),
+        credentials: 'include',
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then(window.location.reload());
+
 
   return (
       <>
@@ -57,27 +81,14 @@ const WriteReview = () => {
                 <FormControl id="Username">
                   <FormLabel>Username</FormLabel>
                   <Input
+                      value ={user.username}
                       placeholder="username"
                       _placeholder={{color: 'gray.500'}}
                       type="email"
+                      onChange={(e) => setUser({...user, username: e.target.value})}
                   />
                 </FormControl>
-                <FormControl id="email">
-                  <FormLabel>Email address</FormLabel>
-                  <Input
-                      placeholder="your-email@example.com"
-                      _placeholder={{color: 'gray.500'}}
-                      type="text"
-                  />
-                </FormControl>
-                <FormControl id="password">
-                  <FormLabel>Password</FormLabel>
-                  <Input
-                      placeholder="password"
-                      _placeholder={{color: 'gray.500'}}
-                      type="text"
-                  />
-                </FormControl>
+
                 <Stack spacing={6} direction={['column', 'row']}>
                   <Button
                       bg={'red.400'}
@@ -96,8 +107,8 @@ const WriteReview = () => {
                       _hover={{
                         bg: 'blue.500',
                       }}
-                      onClick={onClose}>
-                    Submit
+                      onClick={updateUsername}>
+                    Submit Username
                   </Button>
                 </Stack>
               </Stack>
@@ -108,4 +119,4 @@ const WriteReview = () => {
   )
 }
 
-export default WriteReview;
+export default ProfileEdit;
