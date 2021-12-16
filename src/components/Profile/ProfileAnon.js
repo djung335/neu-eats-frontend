@@ -14,7 +14,6 @@ import dave from "../../images/dave.jpeg";
 import {useEffect, useState} from "react";
 import {API_URL} from "../../consts";
 import {useNavigate, useParams} from "react-router-dom";
-import ProfileEdit from "./ProfileEdit"
 import ProfileReviews from "./ProfileReviews"
 
 const ProfileAnon = () => {
@@ -78,9 +77,6 @@ const ProfileAnon = () => {
                       </Text>
                     </VStack>
                   </Stack>
-                </Box>
-                <Box align={'right'}>
-                  <ProfileEdit/>
                 </Box>
               </Box>
             </VStack>
