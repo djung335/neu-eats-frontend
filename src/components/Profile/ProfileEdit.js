@@ -66,6 +66,16 @@ const WriteReview = () => {
                       onClick={onClose}>>
                     Cancel
                   </Button>
+                  <Button
+                      bg={'blue.400'}
+                      color={'white'}
+                      w="full"
+                      _hover={{
+                        bg: 'blue.500',
+                      }}
+                      onClick={updateUsername}>
+                    Submit Username
+                  </Button>
  
                 </Stack>
               </Stack>
