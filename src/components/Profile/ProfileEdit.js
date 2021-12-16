@@ -57,9 +57,9 @@ const WriteReview = () => {
                 <FormControl id="Username">
                   <FormLabel>Username</FormLabel>
                   <Input
-                      placeholder="Bio"
+                      placeholder="username"
                       _placeholder={{color: 'gray.500'}}
-                      type="text"
+                      type="email"
                   />
                 </FormControl>
                 <FormControl id="email">
@@ -67,7 +67,15 @@ const WriteReview = () => {
                   <Input
                       placeholder="your-email@example.com"
                       _placeholder={{color: 'gray.500'}}
-                      type="email"
+                      type="text"
+                  />
+                </FormControl>
+                <FormControl id="password">
+                  <FormLabel>Password</FormLabel>
+                  <Input
+                      placeholder="password"
+                      _placeholder={{color: 'gray.500'}}
+                      type="text"
                   />
                 </FormControl>
                 <Stack spacing={6} direction={['column', 'row']}>
