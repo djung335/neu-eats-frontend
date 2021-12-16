@@ -1,0 +1,28 @@
+
+[
+  {
+    "restaurant_id": 4234341971086704,
+    "restaurant_name": "Ichiban Yakitori Sushi House",
+    "restaurant_phone": "617-236-7907",
+    "address": {"formatted": "14 Westland Ave"},
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02115",
+    "rating": 4.0,
+    "reviewCount": 2,
+    "studentReview": 3,
+    "restaurantImage": "../../images/boston-shawarma-3.jpeg",
+    "restaurantDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "attributes": {
+      "HuskyDollars": true,
+      "StudentDiscount": true
+    },
+    "cuisines": [
+      "Japanese"
+    ],
+    "price_range_num": 3.5,
+    "hours": "Open - Closes 10PM"
+  }
+
+]
+  
