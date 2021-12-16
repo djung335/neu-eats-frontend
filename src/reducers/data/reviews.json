@@ -1,14 +1,12 @@
 [
   {
     "_id": "123",
-    "restaurant": "Boston Shawarma",
-    "userid": "10209",
-    "userName": "alexas",
-    "verified": false,
+    "restaurantID": "4235828571057920",
+    "userID": "61babcf5050aacf0c4d8b1ba",
     "handle": "Alexa S.",
-    "review": "The meal I had wasn't too bad. Only complaint I have is that they didn't give enough sauce. Come early because this place gets packed!",
-    "time": "December 1, 2021",
-    "profileImage": "../../images/alexa.jpeg",
+    "review": "The meal I had wasn't too bad. Only complaint I have is that they didn't give enough sauce. Come early because this place gets super packed!",
+    "time": "2021-05-18T16:00:00Z",
+    "helpfuled": false,
     "stats": {
       "rating": 4.5,
       "helpfuls": 3
@@ -16,14 +14,12 @@
   },
   {
     "_id": "567",
-    "restaurant": "Boston Shawarma",
-    "userid": "13092",
-    "userName": "dave24",
-    "verified": true,
-    "handle": "Dave P.",
+    "restaurantID": "4235828571057920",
+    "userID": "61b51d56aaeefbcb0db88d56",
+    "handle": "Daniel K.",
     "review": "Amazing food and even better service! Hope to come back here soon with a few of my friends. They have a nice buy one get one free deal as well.",
-    "time": "November 30, 2021",
-    "profileImage": "../../images/dave.jpeg",
+    "time": "2021-11-18T16:00:00Z",
+    "helpfuled": false,
     "stats": {
       "rating": 5.0,
       "helpfuls": 0
