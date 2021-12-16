@@ -10,16 +10,16 @@ import {
   Stack,
   useColorModeValue,
 } from '@chakra-ui/react';
-import {useEffect, useState} from "react";
-import {API_URL} from "../../consts";
-import {useNavigate, useParams} from "react-router-dom";
+import React from "react";
 
-const ProfileEdit = () => {
-
-
+const WriteReview = () => {
   const {isOpen, onOpen, onClose} = useDisclosure()
+  /*let [value, setValue] = React.useState("")
 
-
+  let handleInputChange = (e) => {
+    let inputValue = e.target.value
+    setValue(inputValue)
+  }*/
 
   return (
       <>
@@ -57,14 +57,27 @@ const ProfileEdit = () => {
                 <FormControl id="Username">
                   <FormLabel>Username</FormLabel>
                   <Input
-                      value ={user.username}
                       placeholder="username"
                       _placeholder={{color: 'gray.500'}}
                       type="email"
-         
                   />
                 </FormControl>
-
+                <FormControl id="email">
+                  <FormLabel>Email address</FormLabel>
+                  <Input
+                      placeholder="your-email@example.com"
+                      _placeholder={{color: 'gray.500'}}
+                      type="text"
+                  />
+                </FormControl>
+                <FormControl id="password">
+                  <FormLabel>Password</FormLabel>
+                  <Input
+                      placeholder="password"
+                      _placeholder={{color: 'gray.500'}}
+                      type="text"
+                  />
+                </FormControl>
                 <Stack spacing={6} direction={['column', 'row']}>
                   <Button
                       bg={'red.400'}
@@ -84,7 +97,7 @@ const ProfileEdit = () => {
                         bg: 'blue.500',
                       }}
                       onClick={onClose}>
-                    Submit Username
+                    Submit
                   </Button>
                 </Stack>
               </Stack>
@@ -95,4 +108,4 @@ const ProfileEdit = () => {
   )
 }
 
-export default ProfileEdit;
+export default WriteReview;
