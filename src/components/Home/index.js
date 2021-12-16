@@ -4,7 +4,7 @@ import {
   InputGroup,
   Heading,
   VStack,
-  HStack,
+  Stack,
   IconButton, InputRightElement
 } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons";
@@ -12,10 +12,27 @@ import PopularReviews from "./PopularReviews";
 import Trending from "./Trending";
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
+import { API_URL } from "../../consts";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('/');
-  
+  const [auth, setAuth] = useState();
+
+  const getAuth = () => {
+    fetch(`${API_URL}/auth`, {
+      method: 'POST',
+      credentials: 'include'
+    }).then(res => res.json())
+    .then(auth => {
+      setAuth(auth);
+    })
+  }
+
+
+
+
+
+
   return (
     <>
       <Center>
@@ -31,10 +48,10 @@ const Home = () => {
           </InputGroup>
         </VStack>
       </Center>
-      <HStack mt="12">
+      <Stack direction={['column', 'row']} mt="12">
         <Trending/>
         <PopularReviews/>
-     </HStack>
+     </Stack>
      </>
   );
 
