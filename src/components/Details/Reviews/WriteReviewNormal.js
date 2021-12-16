@@ -54,6 +54,7 @@ const WriteReviewNormal = () => {
                   colorScheme={'white'}
                   bg={'#aacaef'}
                   onClick={reviewClickHandler}
+                  onClick={createReview}
               >
                 Post
               </Button>
