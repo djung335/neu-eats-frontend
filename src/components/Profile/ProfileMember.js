@@ -39,7 +39,7 @@ const ProfileMember = () => {
           <Box w='60%'>
             <VStack align={'left'}>
               <Heading>{user.firstName} {user.lastName}'s Reviews</Heading>
-              <ProfileReviews user={user}/>
+              <ProfileReviews/>
             </VStack>
           </Box>
           <Box w='40%'>
