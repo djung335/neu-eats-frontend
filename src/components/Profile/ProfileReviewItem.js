@@ -55,7 +55,7 @@ const ProfileReviewItem = ({
                 divider={<StackDivider borderColor="gray.200"/>}
             >
               <VStack>
-                <Image src={dave} w={'350px'} h={'auto'} alt='ProfilePic'/>
+                <Image src={dave} w={'150px'} h={'150px'} alt='ProfilePic'/>
                 <Text lineHeight={1.1} fontSize={{base: 'sm', md: 'md'}}>
                   {review.handle}
                 </Text>
