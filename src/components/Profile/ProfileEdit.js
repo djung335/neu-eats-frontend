@@ -14,12 +14,6 @@ import React from "react";
 
 const WriteReview = () => {
   const {isOpen, onOpen, onClose} = useDisclosure()
-  /*let [value, setValue] = React.useState("")
-
-  let handleInputChange = (e) => {
-    let inputValue = e.target.value
-    setValue(inputValue)
-  }*/
 
   return (
       <>
@@ -51,29 +45,12 @@ const WriteReview = () => {
                   p={6}
                   my={12}>
                 <Heading lineHeight={1.1} fontSize={{base: '2xl', sm: '3xl'}}>
-                  User Profile Edit
+                  Edit Profile
                 </Heading>
-
                 <FormControl id="Username">
                   <FormLabel>Username</FormLabel>
                   <Input
                       placeholder="username"
-                      _placeholder={{color: 'gray.500'}}
-                      type="email"
-                  />
-                </FormControl>
-                <FormControl id="email">
-                  <FormLabel>Email address</FormLabel>
-                  <Input
-                      placeholder="your-email@example.com"
-                      _placeholder={{color: 'gray.500'}}
-                      type="text"
-                  />
-                </FormControl>
-                <FormControl id="password">
-                  <FormLabel>Password</FormLabel>
-                  <Input
-                      placeholder="password"
                       _placeholder={{color: 'gray.500'}}
                       type="text"
                   />
@@ -97,8 +74,9 @@ const WriteReview = () => {
                         bg: 'blue.500',
                       }}
                       onClick={onClose}>
-                    Submit
+                    Submit Username
                   </Button>
+ 
                 </Stack>
               </Stack>
             </Flex>

@@ -1,0 +1,32 @@
+[
+  {"review": "Get the Husky Meal Special!",
+  "restaurant": "Boston Shawarma",
+  "reviewer": "Dan K.",
+  "profile" : "../../images/dave.jpeg"}, 
+
+  {"review": "The food is good, but the staff is very mean :(",
+  "restaurant": "Popeyes",
+  "reviewer": "Dan K.",
+  "profile" : "../../images/dave.jpeg"},
+
+  {"review": "The fries are the best part about this place.",
+  "restaurant": "UBurger",
+  "reviewer": "Dan K.",
+  "profile" : "../../images/dave.jpeg"},
+
+  {"review": "Really tasty! All the vegetables are free.",
+  "restaurant": "Spring Shabu",
+  "reviewer": "Dan K.",
+  "profile" : "../../images/dave.jpeg"},
+
+  {"review": "I came here expecting a pokemon store, but the food here isn't bad either...",
+  "restaurant": "Poke Station",
+  "reviewer": "Dan K.",
+  "profile" : "../../images/dave.jpeg"},
+
+  {"review": "Hot take but this place is as good as International Village, the pizza is phenomenal.",
+  "restaurant": "Stetson East",
+  "reviewer": "Dan K.",
+  "profile" : "../../images/dave.jpeg"}
+
+]

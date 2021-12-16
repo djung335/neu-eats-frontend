@@ -36,6 +36,7 @@ const Header = () => {
       setAuth(auth);
     })
   }
+  
   useEffect(getAuth, [navigate]);
 
   const logout = () => {
