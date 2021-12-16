@@ -29,7 +29,7 @@ const ReviewItem = ({review}) => {
             p={6}
             overflow={'hidden'}>
           <Stack mb={2} direction={'row'} spacing={4} align={'center'}>
-            <Link to={'/profile/' /*+ {review.userid}*/}>
+            <Link to={`/profile/{review.userID}`}>
               <Avatar
                   src={review.profileImage}
                   alt={'Author'}
