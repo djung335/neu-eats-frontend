@@ -73,7 +73,7 @@ const WriteReview = () => {
                       _hover={{
                         bg: 'blue.500',
                       }}
-                      onClick={updateUsername}>
+                      onClick={onClose}>
                     Submit Username
                   </Button>
  
