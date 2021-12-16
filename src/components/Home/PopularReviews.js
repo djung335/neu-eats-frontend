@@ -7,7 +7,7 @@ const PopularReviews = () => {
     return(     
     <Box w="50%" p={3}>
       <Text fontWeight="700" textAlign="left">Popular Reviews</Text>
-      <Wrap mt={5} spacing='25px'>
+      <Wrap spacing='25px'>
         {
           reviews.map((review) => <PopularReviewItem review={review} />)
         }
