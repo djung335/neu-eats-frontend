@@ -14,8 +14,14 @@ import {postNewReview} from "../../../services/reviewService";
 
 const WriteReviewNormal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [writeReview, setWriteReview] = useState("");
-  const createReview = () => postNewReview({review: writeReview});
+  let [newReview, setReview] = useState('');
+  const dispatch = useDispatch();
+  const reviewClickHandler = () => {
+    postNewReview(dispatch, {
+      review: newReview
+    });
+
+  }
   return(
       <>
         <Button
@@ -38,6 +44,8 @@ const WriteReviewNormal = () => {
               <Textarea
                   placeholder="Write your review here..."
                   size="sm"
+                  value={newReview}
+                  onChange={(event) => setReview(event.target.value)}
               />
             </ModalBody>
 
@@ -45,6 +53,7 @@ const WriteReviewNormal = () => {
               <Button
                   colorScheme={'white'}
                   bg={'#aacaef'}
+                  onClick={reviewClickHandler}
                   onClick={createReview}
               >
                 Post
