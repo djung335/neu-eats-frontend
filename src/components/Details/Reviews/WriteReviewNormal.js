@@ -14,13 +14,8 @@ import {postNewReview} from "../../../services/reviewService";
 
 const WriteReviewNormal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [writeReview, setWriteReview] = useState('');
-  const dispatch = useDispatch();
-  const reviewClickHandler = () => {
-    postNewReview(dispatch, {
-      review: writeReview
-    });
-  }
+  const [writeReview, setWriteReview] = useState("");
+  const createReview = () => postNewReview({review: writeReview});
   return(
       <>
         <Button
@@ -50,7 +45,7 @@ const WriteReviewNormal = () => {
               <Button
                   colorScheme={'white'}
                   bg={'#aacaef'}
-                  onClick={reviewClickHandler()}
+                  onClick={createReview}
               >
                 Post
               </Button>

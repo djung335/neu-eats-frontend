@@ -13,11 +13,10 @@ export const fetchAllReviews = (dispatch) =>
 export const postNewReview = (dispatch, newReview) =>
     fetch(REVIEW_API, {
       method: "POST",
-      body: JSON.stringify(newReview),
       headers: {
         "content-type": "application/json",
-        "accept": 'application/json'
       },
+      body: JSON.stringify(newReview),
     })
     .then((response) => response.json())
     .then((review) =>
