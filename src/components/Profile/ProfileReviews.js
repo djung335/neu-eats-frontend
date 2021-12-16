@@ -20,9 +20,6 @@ const ProfileReviews = ({user = {name: "Dave peters",
   bio: "Ut enim ad minim veniam, quis nostrud exercitation"}}) => {
   return(
       <>
-
-        {user.user && <Heading size={'lg'}>Your Reviews</Heading>}
-
         {
           reviews.map((rest) => {
             return(
